@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { RiCustomerService2Line } from "react-icons/ri";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { PiKeyReturnBold } from "react-icons/pi";
 import { FaArrowRight } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa";
+import { FaAngleUp } from "react-icons/fa6";
 
 
 import electronics from '../assets/electronics.png';
@@ -19,6 +20,10 @@ import user4 from '../assets/user4.jpg';
 
 
 const Hero = () => {
+
+  const [isFAQopen, setIsFAQopen] = useState(1);
+
+
   return (
     <main className='min-h-screen bg-gradient-to-br from-red-600 via-orange-500 to-pink-500 overflow-x-hidden'>
         <div id="hero" class="min-h-screen ">
@@ -182,7 +187,74 @@ const Hero = () => {
               </div>
 
             </div>
-           </div> 
+           </div>
+
+
+          <div id="customer-review" className='container'>
+           <h2 className='text-4xl md:text-5xl sm:font-semibold mb-7 md:mb-10 max-w-8xl leading-normal text-white'>🤔 FAQs</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start mt-6">
+              <div className="group rounded-xl border border-gray-200 bg-gray-50 p-6">
+                <dt className='flex justify-between items-center cursor-pointer' onClick={()=> setIsFAQopen(1)}>
+                  <p className=' font-semibold text-lg'>who built the TRADEZY website ?</p>
+                  <FaAngleUp className={`${isFAQopen===1 ? "" : "-rotate-180"}`} />
+                </dt>
+                <dd className={` text-lg font-light mt-6 ${isFAQopen===1 ? "" : "hidden"}`}>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque aut architecto tenetur quo doloremque, a vero ab magnam accusantium vel deleniti, provident officia porro delectus, autem in quisquam odit sequi.</p>
+                </dd>
+              </div>
+
+              <div className="group rounded-xl border border-gray-200 bg-gray-50 p-6">
+                <dt className='flex justify-between items-center cursor-pointer' onClick={()=> setIsFAQopen(2)}>
+                  <p className=' font-semibold text-lg'>who built the TRADEZY website ?</p>
+                  <FaAngleUp className={`${isFAQopen===2 ? "" : "-rotate-180"}`} />
+                </dt>
+                <dd className={` text-lg font-light mt-6 ${isFAQopen===2 ? "" : "hidden"}`}>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque aut architecto tenetur quo doloremque, a vero ab magnam accusantium vel deleniti, provident officia porro delectus, autem in quisquam odit sequi.</p>
+                </dd>
+              </div>
+
+              <div className="group rounded-xl border border-gray-200 bg-gray-50 p-6">
+                <dt className='flex justify-between items-center cursor-pointer' onClick={()=> setIsFAQopen(3)}>
+                  <p className=' font-semibold text-lg'>who built the TRADEZY website ?</p>
+                  <FaAngleUp className={`${isFAQopen===3 ? "" : "-rotate-180"}`} />
+                </dt>
+                <dd className={` text-lg font-light mt-6 ${isFAQopen===3 ? "" : "hidden"}`}>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque aut architecto tenetur quo doloremque, a vero ab magnam accusantium vel deleniti, provident officia porro delectus, autem in quisquam odit sequi.</p>
+                </dd>
+              </div>
+
+              <div className="group rounded-xl border border-gray-200 bg-gray-50 p-6">
+                <dt className='flex justify-between items-center cursor-pointer' onClick={()=> setIsFAQopen(4)}>
+                  <p className=' font-semibold text-lg'>who built the TRADEZY website ?</p>
+                  <FaAngleUp className={`${isFAQopen===4 ? "" : "-rotate-180"}`} />
+                </dt>
+                <dd className={` text-lg font-light mt-6 ${isFAQopen===4 ? "" : "hidden"}`}>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque aut architecto tenetur quo doloremque, a vero ab magnam accusantium vel deleniti, provident officia porro delectus, autem in quisquam odit sequi.</p>
+                </dd>
+              </div>
+
+              <div className="group rounded-xl border border-gray-200 bg-gray-50 p-6">
+                <dt className='flex justify-between items-center cursor-pointer' onClick={()=> setIsFAQopen(5)}>
+                  <p className=' font-semibold text-lg'>who built the TRADEZY website ?</p>
+                  <FaAngleUp className={`${isFAQopen===5 ? "" : "-rotate-180"}`} />
+                </dt>
+                <dd className={` text-lg font-light mt-6 ${isFAQopen===5 ? "" : "hidden"}`}>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque aut architecto tenetur quo doloremque, a vero ab magnam accusantium vel deleniti, provident officia porro delectus, autem in quisquam odit sequi.</p>
+                </dd>
+              </div>
+
+              <div className="group rounded-xl border border-gray-200 bg-gray-50 p-6">
+                <dt className='flex justify-between items-center cursor-pointer' onClick={()=> setIsFAQopen(6)}>
+                  <p className=' font-semibold text-lg'>who built the TRADEZY website ?</p>
+                  <FaAngleUp className={`${isFAQopen===6 ? "" : "-rotate-180"}`} />
+                </dt>
+                <dd className={` text-lg font-light mt-6 ${isFAQopen===6 ? "" : "hidden"}`}>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque aut architecto tenetur quo doloremque, a vero ab magnam accusantium vel deleniti, provident officia porro delectus, autem in quisquam odit sequi.</p>
+                </dd>
+              </div>
+            </div>
+          </div>
+
         </div>  
     </main>
   )
