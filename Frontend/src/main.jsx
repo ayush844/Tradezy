@@ -1,22 +1,22 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
-import Layout from './Layout.jsx'
-import Hero from './Pages/Hero.jsx'
-
-
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path='/' element={<Layout />} >
-      <Route path='' element={<Hero />} />
-    </Route>
-  )
-)
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Layout from './Layout.jsx';
+import Hero from './Pages/Hero.jsx';
+import LogIn from './Pages/LogIn.jsx';
+import './index.css';
+import Signup from './Pages/Signup.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Hero />} />
+        </Route>
+        <Route path="/login" element={<LogIn />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
+);
