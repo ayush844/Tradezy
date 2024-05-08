@@ -22,7 +22,7 @@ import Sports from '../assets/sportsCategory.png';
 
 const Categories = () => {
   return (
-    <div className='min-h-screen overflow-x-hidden'>
+    <main className='min-h-screen overflow-x-hidden'>
         <div id="heading" className='container flex justify-center mt-0'>
             <h1 className=' font-semibold leading-snug sm:leading-normal mt-4 text-4xl md:text-5xl bg-gradient-to-r  from-cyan-400 to-green-400 bg-clip-text text-transparent text-center'>Discover Endless Choices: Explore Our Categories!</h1>
         </div>
@@ -71,7 +71,7 @@ const Categories = () => {
             </div>
 
         </div>
-    </div>
+    </main>
   )
 }
 
