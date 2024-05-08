@@ -8,7 +8,7 @@
 @layer base{
     body{
         @apply font-body;
-        @apply bg-gradient-to-br from-red-600 via-orange-500 to-pink-500
+        @apply bg-gradient-to-br from-red-600 via-orange-500 to-pink-500;
     }
     h1, h2, h3{
         @apply font-display font-medium

@@ -17,6 +17,7 @@ import user1 from '../assets/user1.png';
 import user2 from '../assets/user2.jpg';
 import user3 from '../assets/user3.jpg';
 import user4 from '../assets/user4.jpg';
+import { Link } from 'react-router-dom';
 
 
 const Hero = () => {
@@ -102,10 +103,12 @@ const Hero = () => {
               </div>
 
               <div className=" group rounded-2xl p-[3px] bg-slate-200 hover:bg-gradient-to-br hover:from-pink-500 hover:via-orange-400 hover:to-blue-500 cursor-pointer">
+                <Link to='/categories'>
                 <div className="rounded-2xl bg-white w-full h-full p-6 flex flex-row gap-2 items-center justify-center group-hover:bg-gradient-to-br group-hover:from-pink-100 group-hover:via-orange-100 group-hover:to-blue-100">
-                  <h2 className=' text-2xl md:text-4xl font-light'>SEE ALL PRODUCTS</h2>
+                  <h1 className=' text-2xl md:text-4xl font-light'>SEE ALL PRODUCTS</h1>
                   <FaArrowRight className=' text-3xl'/>
                 </div>
+                </Link>
               </div>
             </div>
            </div>
@@ -181,7 +184,7 @@ const Hero = () => {
                 <div class="w-16 h-16">
                     <img src={user4}  class="rounded-full w-full h-full object-cover"  alt="" />
                 </div>
-                <h3 className=' text-lg'>Anuj Sharma</h3>
+                <h3 className=' text-lg'>Aniket Sharma</h3>
               </div>
                 </div>
               </div>

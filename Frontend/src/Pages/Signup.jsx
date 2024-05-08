@@ -4,7 +4,7 @@ import logo from '../assets/logo.png';
 
 const Signup = () => {
   return (
-    <div className=' h-[100vh] w-[100vw] flex items-center justify-center'>
+    <div className=' h-[100vh] w-[100vw] flex items-center justify-center p-4'>
 
         <div className=" flex flex-col gap-8 bg-white border-2 md:rounded-lg border-gray-300 h-full w-full lg:h-fit lg:w-[30rem] items-center justify-center p-8">
             <Link to="/" id='brand' className='flex gap-2 items-center justify-center'>

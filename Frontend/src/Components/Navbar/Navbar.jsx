@@ -4,7 +4,7 @@ import { CiLogin } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 
 import logo from '../../assets/logo.png'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -17,8 +17,8 @@ const Navbar = () => {
             <span className='text-xl font-medium font-display md:text-3xl'>Tradezy</span>
         </Link>
         <div id="nav-menu" className='hidden md:flex gap-12'>
-            <Link to="/" className='font-medium hover:text-primary text-lg'>Categories</Link>
-            <Link to="/" className='font-medium hover:text-primary text-lg'>Latest Arrivals</Link>
+            <NavLink to="/categories" className={({isActive}) => `font-medium hover:text-primary text-lg ${isActive?"text-primary" : "" }`}>Categories</NavLink>
+            <NavLink to="/latest" className={({isActive}) => `font-medium hover:text-primary text-lg ${isActive?"text-primary" : "" }`}>Latest Arrivals</NavLink>
         </div>
         <Link to='/login' className=' hidden md:flex items-center justify-center gap-3 rounded-lg border border-red-600 px-6 py-2 hover:border-2'>
             <CiLogin className='text-primary text-2xl'/>
