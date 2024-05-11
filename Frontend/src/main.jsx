@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './Layout.jsx';
 import Hero from './Pages/Hero.jsx';
@@ -9,7 +9,7 @@ import Signup from './Pages/Signup.jsx';
 import Categories from './Pages/Categories.jsx';
 import Product from './Pages/Product.jsx';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter >
       <Routes >
