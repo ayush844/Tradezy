@@ -39,14 +39,14 @@ const Navbar = () => {
                 </button>
             </nav>
             <div className="mt-6">
-                <Link to="/categories" className="font-medium m-3 p-3 block hover:bg-red-500 rounded-lg text-2xl text-white">
+                <Link to="/categories" className="font-medium m-3 p-3 block hover:bg-red-500 rounded-lg text-2xl text-white"  onClick={()=>setIsOpen(prev => !prev)}>
                     Categories
                 </Link>
-                <Link to="/products" className="font-medium m-3 p-3 block hover:bg-red-500 rounded-lg text-2xl text-white">
+                <Link to="/products" className="font-medium m-3 p-3 block hover:bg-red-500 rounded-lg text-2xl text-white"  onClick={()=>setIsOpen(prev => !prev)}>
                     Products
                 </Link>
                 <div className="h-[1px] bg-gray-300"></div>
-                <Link to='/login' className='flex items-center justify-center gap-3 rounded-lg border-white px-3 py-1  border-2 m-4'>
+                <Link to='/login' className='flex items-center justify-center gap-3 rounded-lg border-white px-3 py-1  border-2 m-4'  onClick={()=>setIsOpen(prev => !prev)}>
                     <CiLogin className='text-white text-2xl'/>
                     <span className='font-medium text-white text-2xl'>LogIn/SignUp</span>
                 </Link>

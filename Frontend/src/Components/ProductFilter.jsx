@@ -19,7 +19,7 @@ const ProductFilter = ({showProductFilter, setShowProductFilter}) => {
     
     
   return (
-    <div className={`${showProductFilter ? "flex overflow-hidden" : " hidden"} flex-col lg:relative items-center justify-center w-[100vw] min-h-screen lg:min-h-[70vh] lg:w-96 bg-slate-50 lg:rounded-lg lg:flex lg:flex-col gap-8 absolute`}>
+    <div className={`${showProductFilter ? "flex overflow-hidden" : " hidden"} flex-col lg:relative items-center justify-center lg:justify-start w-[100vw] min-h-screen lg:min-h-[60vh] lg:max-h-[80vh] lg:w-96 bg-slate-50 lg:rounded-lg lg:flex lg:flex-col gap-8 absolute`}>
 
         {showProductFilter && <ImCancelCircle className=' text-3xl absolute top-2 right-2 lg:hidden' onClick={() => setShowProductFilter(false)}/>}
         
