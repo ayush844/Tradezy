@@ -3,6 +3,7 @@ import ProductFilter from '../Components/ProductFilter'
 
 
 import { BiSolidCategory } from "react-icons/bi";
+import ProductCard from '../Components/Cards/ProductCard';
 
 const Product = () => {
 
@@ -25,7 +26,7 @@ const Product = () => {
 
 
 
-          <div id="productsCollection" className={`${showProductFilter && "hidden"} lg:flex w-screen lg:w-[70vw] min-h-[100vh] mt-20 lg:mt-0 bg-slate-100 mx-2 rounded-lg`}>
+          <div id="productsCollection" className={`${showProductFilter && "hidden"} lg:flex flex-col w-screen lg:w-[70vw] min-h-[100vh] mt-20 lg:mt-0 bg-slate-200 mx-2 rounded-lg`}>
             <div className="flex flex-row items-start p-4 md:p-6 justify-between w-[100%]">
               <h1 className=' text-3xl lg:text-4xl'>PRODUTCS:</h1>
 
@@ -35,6 +36,20 @@ const Product = () => {
                 <option value="h2l">Price: high to low</option>
               </select>
             </div>
+
+            <div id="productContainer" className=' w-[100%] h-fit p-2 md:p-6 flex flex-wrap items-center justify-center'>
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+            </div>
+
           </div>
 
 
