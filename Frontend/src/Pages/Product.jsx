@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import ProductFilter from '../Components/ProductFilter'
 
-
 import { BiSolidCategory } from "react-icons/bi";
 import ProductCard from '../Components/Cards/ProductCard';
 
@@ -38,6 +37,11 @@ const Product = () => {
             </div>
 
             <div id="productContainer" className=' w-[100%] h-fit p-2 md:p-6 flex flex-wrap items-center justify-center'>
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
+              <ProductCard />
               <ProductCard />
               <ProductCard />
               <ProductCard />
