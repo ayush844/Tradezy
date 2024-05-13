@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 
+import { FaRegStar } from "react-icons/fa6";
+import { FaStar } from "react-icons/fa6";
+
 const ProductOverview = () => {
 
     const [selectedImage, setSelectedImage] = useState("https://images.unsplash.com/photo-1624096104992-9b4fa3a279dd?q=80&w=2004&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
@@ -36,7 +39,27 @@ const ProductOverview = () => {
                         </div>
                     </div>
                 </div>
-                <div id="descriptionSection">
+                <div id="descriptionSection" className=' flex flex-col w-[50%] gap-7 p-2 pt-5'>
+                    <h1 className=' text-4xl font-bold'>Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h1>
+
+                    <h2 className=' text-[3rem] font-normal'>$40,000</h2>
+
+                    <div id="review" className=' flex gap-3'>
+                        <div id="starBox" className=' flex gap-2'>
+                            <FaStar className=' text-2xl text-yellow-400'/>
+                            <FaStar className=' text-2xl text-yellow-400'/>
+                            <FaStar className=' text-2xl text-yellow-400'/>
+                            <FaStar className=' text-2xl text-yellow-400'/>
+                            <FaRegStar className=' text-2xl text-gray-500' />
+                        </div>
+                        <div id="rating" className=' w-fit h-fit px-2 py-1 bg-blue-400 flex items-center justify-center rounded-lg'>
+                            <span className=' text-blue-900 text-sm font-bold'>4.0</span>
+                        </div>
+                    </div>
+
+                    <p className=' text-base text-gray-700'>Introducing the Apple Watch Series 7 GPS, Aluminum Case in the captivating Starlight Sport edition, combining elegance with unmatched functionality. This cutting-edge wearable technology redefines convenience and style. Crafted from durable aluminum, the sleek Starlight finish adds a touch of sophistication to your attire. With its advanced GPS capabilities, track your workouts, monitor your heart rate, and stay connected on-the-go without needing your iPhone nearby. The Series 7's larger Retina display offers enhanced visibility, while its robust construction ensures durability in any activity. Elevate your fitness journey and daily life with the Apple Watch Series 7, a fusion of innovation and elegance.</p>
+
+                    
 
                 </div>
             </div>
