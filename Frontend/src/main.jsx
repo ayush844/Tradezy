@@ -9,6 +9,7 @@ import Signup from './Pages/Signup.jsx';
 import Categories from './Pages/Categories.jsx';
 import Product from './Pages/Product.jsx';
 import ProductOverview from './Pages/ProductOverview.jsx';
+import Cart from './Pages/Cart.jsx';
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -19,6 +20,7 @@ createRoot(document.getElementById('root')).render(
           <Route path='categories' element={<Categories />} />
           <Route path='products' element={<Product />} />
           <Route path='productOverview' element={<ProductOverview />} />
+          <Route path='cart' element={<Cart />} />
         </Route>
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<Signup />} />
