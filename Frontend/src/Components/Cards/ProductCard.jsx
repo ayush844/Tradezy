@@ -35,7 +35,7 @@ const ProductCard = ({productImg, productName, stars, productPrice}) => {
         </div>
         <div className="flex items-center justify-between">
             <span className="text-3xl font-bold text-gray-900 truncate">$40000</span>
-            <a href="#" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 md:px-5 py-1 md:py-2.5 text-center  ">Add to cart</a>
+            <Link to="/cart" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 md:px-5 py-1 md:py-2.5 text-center  ">Add to cart</Link>
         </div>
     </div>
 </div>

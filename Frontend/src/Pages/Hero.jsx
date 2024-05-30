@@ -103,12 +103,12 @@ const Hero = () => {
               </div>
 
               <div className=" group rounded-2xl p-[3px] bg-slate-200 hover:bg-gradient-to-br hover:from-pink-500 hover:via-orange-400 hover:to-blue-500 cursor-pointer">
-                <a href="/categories">
+                <Link to="/categories">
                 <div className="rounded-2xl bg-white w-full h-full p-6 flex flex-row gap-2 items-center justify-center group-hover:bg-gradient-to-br group-hover:from-pink-100 group-hover:via-orange-100 group-hover:to-blue-100">
                   <h1 className=' text-2xl md:text-4xl font-light'>SEE ALL CATEGORIES</h1>
                   <FaArrowRight className=' text-3xl'/>
                 </div>
-                </a>
+                </Link>
               </div>
             </div>
            </div>
