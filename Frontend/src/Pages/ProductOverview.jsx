@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { FaRegStar } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa6";
 import { FaCartPlus } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const ProductOverview = () => {
 
@@ -63,7 +64,7 @@ const ProductOverview = () => {
                     <div className="flex w-full items-center justify-center">
                         <button className=' outline-none flex max-w-[20rem] border-black h-fit rounded-md items-center justify-center gap-3 px-4 py-3 text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium text-sm text-center me-2 mt-10 mb-10'>
                             <FaCartPlus className=' text-2xl'/>
-                            <span className=' text-xl font-bold'>ADD TO CART</span>
+                            <Link to='/cart' className=' text-xl font-bold outline-none'>ADD TO CART</Link>
                         </button>
                     </div>
 

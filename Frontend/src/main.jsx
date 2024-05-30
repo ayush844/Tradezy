@@ -10,6 +10,7 @@ import Categories from './Pages/Categories.jsx';
 import Product from './Pages/Product.jsx';
 import ProductOverview from './Pages/ProductOverview.jsx';
 import Cart from './Pages/Cart.jsx';
+import Me from './Pages/Me.jsx';
 
 
 createRoot(document.getElementById('root')).render(
@@ -23,6 +24,7 @@ createRoot(document.getElementById('root')).render(
           <Route path='products' element={<Product />} />
           <Route path='productOverview' element={<ProductOverview />} />
           <Route path='cart' element={<Cart />} />
+          <Route path='me' element={<Me />} />
         </Route>
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<Signup />} />
