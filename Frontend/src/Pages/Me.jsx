@@ -5,6 +5,7 @@ import { MdEmail } from "react-icons/md";
 import { IoCall } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
 import UpdateProfile from '../Components/Modals/UpdateProfile';
+import PrevOrder from '../Components/Cards/PrevOrder';
 
 
 const Me = () => {
@@ -53,6 +54,20 @@ const Me = () => {
           </span>
         </button>
         {showModal && <UpdateProfile setShowModal={setShowModal} />}
+      </div>
+
+      <div className=' w-full gap-4 md:gap-8 mt-10 md:mt-16 lg:mt-24 flex flex-col items-center '>
+        <h2 className=' text-3xl md:text-4xl lg:text-5xl text-red-500 underline'>🛍️Previous Orders</h2>
+        <div className=" w-full m-3 p-4 flex flex-wrap justify-center">
+
+          <PrevOrder />
+          <PrevOrder />
+          <PrevOrder />
+          <PrevOrder />
+          <PrevOrder />
+          <PrevOrder />
+
+        </div>
       </div>
 
       </div>
