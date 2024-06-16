@@ -12,6 +12,7 @@ import ProductOverview from './Pages/ProductOverview.jsx';
 import Cart from './Pages/Cart.jsx';
 import Me from './Pages/Me.jsx';
 import Error from './Pages/Error.jsx';
+import Checkout from './Pages/Checkout.jsx';
 
 
 createRoot(document.getElementById('root')).render(
@@ -26,6 +27,7 @@ createRoot(document.getElementById('root')).render(
           <Route path='productOverview' element={<ProductOverview />} />
           <Route path='cart' element={<Cart />} />
           <Route path='me' element={<Me />} />
+          <Route path='checkout' element={<Checkout />} />
           <Route path="*" element={<Error />} />
         </Route>
         <Route path="/login" element={<LogIn />} />
