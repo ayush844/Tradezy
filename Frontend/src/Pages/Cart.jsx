@@ -1,5 +1,6 @@
 import React from 'react'
 import CartProduct from '../Components/Cards/CartProduct'
+import { Link } from 'react-router-dom'
 
 const Cart = () => {
   return (
@@ -39,7 +40,9 @@ const Cart = () => {
             </div>
           </div>
 
+          <Link to="/checkout" className='w-full'>
           <button type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg w-full px-5 py-2.5 md:text-2xl text-center me-2 mb-2 uppercase font-bold text-xl">checkout</button>
+          </Link>
 
         </div>
         

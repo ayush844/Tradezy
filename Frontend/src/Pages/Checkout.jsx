@@ -2,6 +2,7 @@ import React from 'react'
 
 import { MdOutlineNavigateNext } from "react-icons/md";
 
+
 const Checkout = () => {
   return (
     <main  className='min-h-screen overflow-x-hidden mb-4'>

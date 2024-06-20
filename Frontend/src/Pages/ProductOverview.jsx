@@ -4,6 +4,7 @@ import { FaRegStar } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa6";
 import { FaCartPlus } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import ProductReview from '../Components/Cards/ProductReview';
 
 const ProductOverview = () => {
 
@@ -61,16 +62,31 @@ const ProductOverview = () => {
 
                     <p className=' text-base text-gray-700'>Introducing the Apple Watch Series 7 GPS, Aluminum Case in the captivating Starlight Sport edition, combining elegance with unmatched functionality. This cutting-edge wearable technology redefines convenience and style. Crafted from durable aluminum, the sleek Starlight finish adds a touch of sophistication to your attire. With its advanced GPS capabilities, track your workouts, monitor your heart rate, and stay connected on-the-go without needing your iPhone nearby. The Series 7's larger Retina display offers enhanced visibility, while its robust construction ensures durability in any activity. Elevate your fitness journey and daily life with the Apple Watch Series 7, a fusion of innovation and elegance.</p>
 
-                    <div className="flex w-full items-center justify-center">
+                    <Link to="/cart" className="flex w-full items-center justify-center">
                         <button className=' outline-none flex max-w-[20rem] border-black h-fit rounded-md items-center justify-center gap-3 px-4 py-3 text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium text-sm text-center me-2 mt-10 mb-10'>
                             <FaCartPlus className=' text-2xl'/>
                             <Link to='/cart' className=' text-xl font-bold outline-none'>ADD TO CART</Link>
                         </button>
-                    </div>
+                    </Link>
 
 
 
                 </div>
+            </div>
+
+
+            <div className=" border-t-2 border-black mt-10 flex flex-col items-center gap-10 p-4 mb-8">
+
+                <h1 className=' text-4xl underline font-normal'>👥 Recent Customer Reviews 👥</h1>
+
+                <div className=" grid grid-cols-1 md:grid-cols-2 w-full gap-8 ">
+                    <ProductReview />
+                    <ProductReview />
+                    <ProductReview />
+                    <ProductReview />
+                </div>
+
+
             </div>
 
 
