@@ -3,6 +3,7 @@ import { BsPeopleFill } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaBasketShopping } from "react-icons/fa6";
 import { MdAdd } from "react-icons/md";
+import AdminProductTable from '../Components/Tables/AdminProductTable';
 
 
 const AdminDashboard = () => {
@@ -55,16 +56,16 @@ const AdminDashboard = () => {
 
       <div className="flex w-full items-center mt-8 flex-wrap gap-2 md:gap-4 justify-center">
 
-        <div className={`w-52 md:w-64 h-10 md:h-14 border-2 border-black ${selected==1? " bg-red-500 " : " bg-white "}  rounded-md flex flex-col items-center justify-evenly cursor-pointer`} onClick={(e)=> setSelected(1)}>
+        <div className={`w-52 md:w-64 h-10 md:h-14${selected==1? " bg-red-500 " : " bg-white border border-black "}  rounded-md flex flex-col items-center justify-evenly cursor-pointer`} onClick={(e)=> setSelected(1)}>
           <h3 className={` text-xl md:text-3xl ${selected==1? " font-bold text-white ": " text-red-500 font-normal "}`}>PRODUCTS</h3>
         </div>
 
-        <div className={`w-52 md:w-64 h-10 md:h-14 border-2 border-black ${selected==2? " bg-red-500 " : " bg-white "}  rounded-md flex flex-col items-center justify-evenly cursor-pointer`} onClick={(e)=> setSelected(2)}>
+        <div className={`w-52 md:w-64 h-10 md:h-14 ${selected==2? " bg-red-500 " : " bg-white  border border-black "}  rounded-md flex flex-col items-center justify-evenly cursor-pointer`} onClick={(e)=> setSelected(2)}>
           <h3 className={` text-xl md:text-3xl ${selected==2? " font-bold text-white ": " text-red-500 font-normal "}`}>ORDERS</h3>
         </div>
 
 
-        <div className={`w-52 md:w-64 h-10 md:h-14 border-2 border-black ${selected==3? " bg-red-500 " : " bg-white "}  rounded-md flex flex-col items-center justify-evenly cursor-pointer`} onClick={(e)=> setSelected(3)}>
+        <div className={`w-52 md:w-64 h-10 md:h-14 ${selected==3? " bg-red-500 " : " bg-white border border-black "}  rounded-md flex flex-col items-center justify-evenly cursor-pointer`} onClick={(e)=> setSelected(3)}>
           <h3 className={` text-xl md:text-3xl ${selected==3? " font-bold text-white ": " text-red-500 font-normal "}`}>CUSTOMERS</h3>
         </div>
 
@@ -72,7 +73,11 @@ const AdminDashboard = () => {
       </div>     
 
 
+      <div className="w-full mt-8 flex items-center justify-center">
+        <h1 className='text-3xl font-normal underline text-red-600'>PRODUCT DETAILS</h1>
+      </div>
 
+      <AdminProductTable />
 
 
       </div>
