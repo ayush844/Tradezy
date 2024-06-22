@@ -10,7 +10,7 @@ const CartProduct = () => {
             <h2 className=' line-clamp-3 md:line-clamp-2 text-lg md:text-xl font-normal w-48 sm:w-60 md:w-96 cursor-pointer hover:text-blue-600 hover:underline'>Lux Cozi Men's Regular Fit Polo Neck Half Sleeve Solid Casual T-Shirt | Polo T-Shirt for Men</h2>
         </div>
 
-        <select class="py-2 px-3 pe-9 border-black bg-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none outline-none">
+        <select className="py-2 px-3 pe-9 border-black bg-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none outline-none">
             <option selected="">1</option>
             <option>2</option>
             <option>3</option>

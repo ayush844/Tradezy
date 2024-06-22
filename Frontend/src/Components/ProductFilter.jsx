@@ -33,65 +33,65 @@ const ProductFilter = ({showProductFilter, setShowProductFilter}) => {
                     <FaAngleUp className={`${isFAQopen===1 ? "" : "-rotate-180"} transition`} />
                     </dt>
                     <dd className={` text-lg font-light mt-6 ${isFAQopen===1 ? "" : "hidden"}`}>
-<ul class="max-w-sm flex flex-col">
-  <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
-    <div class="relative flex items-start w-full">
-      <div class="flex items-center h-5">
-        <input id="hs-list-group-item-checkbox-1" name="hs-list-group-item-checkbox-1" type="checkbox" class="border-gray-200 rounded disabled:opacity-50" />
+<ul className="max-w-sm flex flex-col">
+  <li className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
+    <div className="relative flex items-start w-full">
+      <div className="flex items-center h-5">
+        <input id="hs-list-group-item-checkbox-1" name="hs-list-group-item-checkbox-1" type="checkbox" className="border-gray-200 rounded disabled:opacity-50" />
       </div>
-      <label for="hs-list-group-item-checkbox-1" class="ms-3.5 block w-full text-sm text-gray-600">
+      <label for="hs-list-group-item-checkbox-1" className="ms-3.5 block w-full text-sm text-gray-600">
         APPAREL
       </label>
     </div>
   </li>
 
-  <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
-    <div class="relative flex items-start w-full">
-      <div class="flex items-center h-5">
-        <input id="hs-list-group-item-checkbox-2" name="hs-list-group-item-checkbox-2" type="checkbox" class="border-gray-200 rounded disabled:opacity-50" />
+  <li className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
+    <div className="relative flex items-start w-full">
+      <div className="flex items-center h-5">
+        <input id="hs-list-group-item-checkbox-2" name="hs-list-group-item-checkbox-2" type="checkbox" className="border-gray-200 rounded disabled:opacity-50" />
       </div>
-      <label for="hs-list-group-item-checkbox-2" class="ms-3.5 block w-full text-sm text-gray-600">
+      <label for="hs-list-group-item-checkbox-2" className="ms-3.5 block w-full text-sm text-gray-600">
         SHOES
       </label>
     </div>
   </li>
 
-  <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
-    <div class="relative flex items-start w-full">
-      <div class="flex items-center h-5">
-        <input id="hs-list-group-item-checkbox-3" name="hs-list-group-item-checkbox-3" type="checkbox" class="border-gray-200 rounded disabled:opacity-50" />
+  <li className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
+    <div className="relative flex items-start w-full">
+      <div className="flex items-center h-5">
+        <input id="hs-list-group-item-checkbox-3" name="hs-list-group-item-checkbox-3" type="checkbox" className="border-gray-200 rounded disabled:opacity-50" />
       </div>
-      <label for="hs-list-group-item-checkbox-3" class="ms-3.5 block w-full text-sm text-gray-600">
+      <label for="hs-list-group-item-checkbox-3" className="ms-3.5 block w-full text-sm text-gray-600">
         WATCHES
       </label>
     </div>
   </li>
-  <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
-    <div class="relative flex items-start w-full">
-      <div class="flex items-center h-5">
-        <input id="hs-list-group-item-checkbox-3" name="hs-list-group-item-checkbox-3" type="checkbox" class="border-gray-200 rounded disabled:opacity-50" />
+  <li className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
+    <div className="relative flex items-start w-full">
+      <div className="flex items-center h-5">
+        <input id="hs-list-group-item-checkbox-3" name="hs-list-group-item-checkbox-3" type="checkbox" className="border-gray-200 rounded disabled:opacity-50" />
       </div>
-      <label for="hs-list-group-item-checkbox-3" class="ms-3.5 block w-full text-sm text-gray-600">
+      <label for="hs-list-group-item-checkbox-3" className="ms-3.5 block w-full text-sm text-gray-600">
         BAGS
       </label>
     </div>
   </li>
-  <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
-    <div class="relative flex items-start w-full">
-      <div class="flex items-center h-5">
-        <input id="hs-list-group-item-checkbox-3" name="hs-list-group-item-checkbox-3" type="checkbox" class="border-gray-200 rounded disabled:opacity-50" />
+  <li className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
+    <div className="relative flex items-start w-full">
+      <div className="flex items-center h-5">
+        <input id="hs-list-group-item-checkbox-3" name="hs-list-group-item-checkbox-3" type="checkbox" className="border-gray-200 rounded disabled:opacity-50" />
       </div>
-      <label for="hs-list-group-item-checkbox-3" class="ms-3.5 block w-full text-sm text-gray-600">
+      <label for="hs-list-group-item-checkbox-3" className="ms-3.5 block w-full text-sm text-gray-600">
         JEWELLERY
       </label>
     </div>
   </li>
-  <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
-    <div class="relative flex items-start w-full">
-      <div class="flex items-center h-5">
-        <input id="hs-list-group-item-checkbox-3" name="hs-list-group-item-checkbox-3" type="checkbox" class="border-gray-200 rounded disabled:opacity-50" />
+  <li className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
+    <div className="relative flex items-start w-full">
+      <div className="flex items-center h-5">
+        <input id="hs-list-group-item-checkbox-3" name="hs-list-group-item-checkbox-3" type="checkbox" className="border-gray-200 rounded disabled:opacity-50" />
       </div>
-      <label for="hs-list-group-item-checkbox-3" class="ms-3.5 block w-full text-sm text-gray-600">
+      <label for="hs-list-group-item-checkbox-3" className="ms-3.5 block w-full text-sm text-gray-600">
         CAPS & HATS
       </label>
     </div>
@@ -105,35 +105,35 @@ const ProductFilter = ({showProductFilter, setShowProductFilter}) => {
                     <FaAngleUp className={`${isFAQopen===2 ? "" : "-rotate-180"} transition`} />
                     </dt>
                     <dd className={` text-lg font-light mt-6 ${isFAQopen===2 ? "" : "hidden"}`}>
-<ul class="max-w-sm flex flex-col">
-  <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
-    <div class="relative flex items-start w-full">
-      <div class="flex items-center h-5">
-        <input id="hs-list-group-item-checkbox-1" name="hs-list-group-item-checkbox-1" type="checkbox" class="border-gray-200 rounded disabled:opacity-50" />
+<ul className="max-w-sm flex flex-col">
+  <li className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
+    <div className="relative flex items-start w-full">
+      <div className="flex items-center h-5">
+        <input id="hs-list-group-item-checkbox-1" name="hs-list-group-item-checkbox-1" type="checkbox" className="border-gray-200 rounded disabled:opacity-50" />
       </div>
-      <label for="hs-list-group-item-checkbox-1" class="ms-3.5 block w-full text-sm text-gray-600">
+      <label for="hs-list-group-item-checkbox-1" className="ms-3.5 block w-full text-sm text-gray-600">
         HOME
       </label>
     </div>
   </li>
 
-  <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
-    <div class="relative flex items-start w-full">
-      <div class="flex items-center h-5">
-        <input id="hs-list-group-item-checkbox-2" name="hs-list-group-item-checkbox-2" type="checkbox" class="border-gray-200 rounded disabled:opacity-50" />
+  <li className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
+    <div className="relative flex items-start w-full">
+      <div className="flex items-center h-5">
+        <input id="hs-list-group-item-checkbox-2" name="hs-list-group-item-checkbox-2" type="checkbox" className="border-gray-200 rounded disabled:opacity-50" />
       </div>
-      <label for="hs-list-group-item-checkbox-2" class="ms-3.5 block w-full text-sm text-gray-600">
+      <label for="hs-list-group-item-checkbox-2" className="ms-3.5 block w-full text-sm text-gray-600">
         KITCHEN
       </label>
     </div>
   </li>
 
-  <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
-    <div class="relative flex items-start w-full">
-      <div class="flex items-center h-5">
-        <input id="hs-list-group-item-checkbox-3" name="hs-list-group-item-checkbox-3" type="checkbox" class="border-gray-200 rounded disabled:opacity-50" />
+  <li className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
+    <div className="relative flex items-start w-full">
+      <div className="flex items-center h-5">
+        <input id="hs-list-group-item-checkbox-3" name="hs-list-group-item-checkbox-3" type="checkbox" className="border-gray-200 rounded disabled:opacity-50" />
       </div>
-      <label for="hs-list-group-item-checkbox-3" class="ms-3.5 block w-full text-sm text-gray-600">
+      <label for="hs-list-group-item-checkbox-3" className="ms-3.5 block w-full text-sm text-gray-600">
       OUTDOOR
       </label>
     </div>
@@ -148,35 +148,35 @@ const ProductFilter = ({showProductFilter, setShowProductFilter}) => {
                     <FaAngleUp className={`${isFAQopen===3 ? "" : "-rotate-180"} transition`} />
                     </dt>
                     <dd className={` text-lg font-light mt-6 ${isFAQopen===3 ? "" : "hidden"}`}>
-<ul class="max-w-sm flex flex-col">
-  <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
-    <div class="relative flex items-start w-full">
-      <div class="flex items-center h-5">
-        <input id="hs-list-group-item-checkbox-1" name="hs-list-group-item-checkbox-1" type="checkbox" class="border-gray-200 rounded disabled:opacity-50" />
+<ul className="max-w-sm flex flex-col">
+  <li className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
+    <div className="relative flex items-start w-full">
+      <div className="flex items-center h-5">
+        <input id="hs-list-group-item-checkbox-1" name="hs-list-group-item-checkbox-1" type="checkbox" className="border-gray-200 rounded disabled:opacity-50" />
       </div>
-      <label for="hs-list-group-item-checkbox-1" class="ms-3.5 block w-full text-sm text-gray-600">
+      <label for="hs-list-group-item-checkbox-1" className="ms-3.5 block w-full text-sm text-gray-600">
       BOOKS
       </label>
     </div>
   </li>
 
-  <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
-    <div class="relative flex items-start w-full">
-      <div class="flex items-center h-5">
-        <input id="hs-list-group-item-checkbox-2" name="hs-list-group-item-checkbox-2" type="checkbox" class="border-gray-200 rounded disabled:opacity-50" />
+  <li className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
+    <div className="relative flex items-start w-full">
+      <div className="flex items-center h-5">
+        <input id="hs-list-group-item-checkbox-2" name="hs-list-group-item-checkbox-2" type="checkbox" className="border-gray-200 rounded disabled:opacity-50" />
       </div>
-      <label for="hs-list-group-item-checkbox-2" class="ms-3.5 block w-full text-sm text-gray-600">
+      <label for="hs-list-group-item-checkbox-2" className="ms-3.5 block w-full text-sm text-gray-600">
       VIDEO GAMES
       </label>
     </div>
   </li>
 
-  <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
-    <div class="relative flex items-start w-full">
-      <div class="flex items-center h-5">
-        <input id="hs-list-group-item-checkbox-3" name="hs-list-group-item-checkbox-3" type="checkbox" class="border-gray-200 rounded disabled:opacity-50" />
+  <li className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
+    <div className="relative flex items-start w-full">
+      <div className="flex items-center h-5">
+        <input id="hs-list-group-item-checkbox-3" name="hs-list-group-item-checkbox-3" type="checkbox" className="border-gray-200 rounded disabled:opacity-50" />
       </div>
-      <label for="hs-list-group-item-checkbox-3" class="ms-3.5 block w-full text-sm text-gray-600">
+      <label for="hs-list-group-item-checkbox-3" className="ms-3.5 block w-full text-sm text-gray-600">
       MOVIES
       </label>
     </div>
@@ -191,45 +191,45 @@ const ProductFilter = ({showProductFilter, setShowProductFilter}) => {
                     <FaAngleUp className={`${isFAQopen===4 ? "" : "-rotate-180"} transition`} />
                     </dt>
                     <dd className={` text-lg font-light mt-6 ${isFAQopen===4 ? "" : "hidden"}`}>
-<ul class="max-w-sm flex flex-col">
-  <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
-    <div class="relative flex items-start w-full">
-      <div class="flex items-center h-5">
-        <input id="hs-list-group-item-checkbox-1" name="hs-list-group-item-checkbox-1" type="checkbox" class="border-gray-200 rounded disabled:opacity-50" />
+<ul className="max-w-sm flex flex-col">
+  <li className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
+    <div className="relative flex items-start w-full">
+      <div className="flex items-center h-5">
+        <input id="hs-list-group-item-checkbox-1" name="hs-list-group-item-checkbox-1" type="checkbox" className="border-gray-200 rounded disabled:opacity-50" />
       </div>
-      <label for="hs-list-group-item-checkbox-1" class="ms-3.5 block w-full text-sm text-gray-600">
+      <label for="hs-list-group-item-checkbox-1" className="ms-3.5 block w-full text-sm text-gray-600">
       TV & APPLIANCES
       </label>
     </div>
   </li>
 
-  <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
-    <div class="relative flex items-start w-full">
-      <div class="flex items-center h-5">
-        <input id="hs-list-group-item-checkbox-2" name="hs-list-group-item-checkbox-2" type="checkbox" class="border-gray-200 rounded disabled:opacity-50" />
+  <li className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
+    <div className="relative flex items-start w-full">
+      <div className="flex items-center h-5">
+        <input id="hs-list-group-item-checkbox-2" name="hs-list-group-item-checkbox-2" type="checkbox" className="border-gray-200 rounded disabled:opacity-50" />
       </div>
-      <label for="hs-list-group-item-checkbox-2" class="ms-3.5 block w-full text-sm text-gray-600">
+      <label for="hs-list-group-item-checkbox-2" className="ms-3.5 block w-full text-sm text-gray-600">
         HEADPHONES
       </label>
     </div>
   </li>
 
-  <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
-    <div class="relative flex items-start w-full">
-      <div class="flex items-center h-5">
-        <input id="hs-list-group-item-checkbox-3" name="hs-list-group-item-checkbox-3" type="checkbox" class="border-gray-200 rounded disabled:opacity-50" />
+  <li className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
+    <div className="relative flex items-start w-full">
+      <div className="flex items-center h-5">
+        <input id="hs-list-group-item-checkbox-3" name="hs-list-group-item-checkbox-3" type="checkbox" className="border-gray-200 rounded disabled:opacity-50" />
       </div>
-      <label for="hs-list-group-item-checkbox-3" class="ms-3.5 block w-full text-sm text-gray-600">
+      <label for="hs-list-group-item-checkbox-3" className="ms-3.5 block w-full text-sm text-gray-600">
       STATIONARY
       </label>
     </div>
   </li>
-  <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
-    <div class="relative flex items-start w-full">
-      <div class="flex items-center h-5">
-        <input id="hs-list-group-item-checkbox-3" name="hs-list-group-item-checkbox-3" type="checkbox" class="border-gray-200 rounded disabled:opacity-50" />
+  <li className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg">
+    <div className="relative flex items-start w-full">
+      <div className="flex items-center h-5">
+        <input id="hs-list-group-item-checkbox-3" name="hs-list-group-item-checkbox-3" type="checkbox" className="border-gray-200 rounded disabled:opacity-50" />
       </div>
-      <label for="hs-list-group-item-checkbox-3" class="ms-3.5 block w-full text-sm text-gray-600">
+      <label for="hs-list-group-item-checkbox-3" className="ms-3.5 block w-full text-sm text-gray-600">
       COMPUTER & ACCESSORIES
       </label>
     </div>
@@ -261,8 +261,8 @@ const ProductFilter = ({showProductFilter, setShowProductFilter}) => {
         </div>    
 
 
-    <div class="flex max-w-sm rounded-xl bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg mb-10">
-        <button class="flex-1 font-bold text-xl bg-white px-6 py-3 rounded-xl" onClick={() => setShowProductFilter(false)}>Apply Filters</button>
+    <div className="flex max-w-sm rounded-xl bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg mb-10">
+        <button className="flex-1 font-bold text-xl bg-white px-6 py-3 rounded-xl" onClick={() => setShowProductFilter(false)}>Apply Filters</button>
     </div>
 
     </div>

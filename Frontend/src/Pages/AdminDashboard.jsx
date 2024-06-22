@@ -4,6 +4,8 @@ import { FaShoppingCart } from "react-icons/fa";
 import { FaBasketShopping } from "react-icons/fa6";
 import { MdAdd } from "react-icons/md";
 import AdminProductTable from '../Components/Tables/AdminProductTable';
+import AdminOrderTable from '../Components/Tables/AdminOrderTable';
+import AdminCustomerTable from '../Components/Tables/AdminCustomerTable';
 
 
 const AdminDashboard = () => {
@@ -48,7 +50,7 @@ const AdminDashboard = () => {
 
 
       <div className="w-full flex items-center justify-center mt-8 mb-8 md:mt-16 md:mb-16">
-        <button type="button" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 flex items-center justify-center gap-3 mt-10 w-fit">
+        <button type="button" className="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 flex items-center justify-center gap-3 mt-10 w-fit">
           <MdAdd  className=' text-4xl font-extrabold text-white'/>
           <span className=' text-2xl font-bold text-white'>ADD PRODUCT</span>
         </button>
@@ -74,10 +76,34 @@ const AdminDashboard = () => {
 
 
       <div className="w-full mt-8 flex items-center justify-center">
-        <h1 className='text-3xl font-normal underline text-red-600'>PRODUCT DETAILS</h1>
+        {selected === 1 && 
+          <h1 className='text-3xl font-normal underline text-red-600'>PRODUCT DETAILS</h1>
+        }
+
+        {selected === 2 && 
+          <h1 className='text-3xl font-normal underline text-red-600'>ORDER DETAILS</h1>
+        }
+
+        {selected === 3 && 
+          <h1 className='text-3xl font-normal underline text-red-600'>CUSTOMER DETAILS</h1>
+        }
+        
       </div>
 
-      <AdminProductTable />
+      {
+        selected === 1 &&
+        <AdminProductTable />
+      }
+
+      {
+        selected === 2 &&
+        <AdminOrderTable />
+      }
+
+      {
+        selected === 3 &&
+        <AdminCustomerTable />
+      }
 
 
       </div>

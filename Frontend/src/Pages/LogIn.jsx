@@ -25,7 +25,7 @@ const LogIn = () => {
                     <input type="password" id="password" name="password" placeholder='enter your password' className=' bottom-3 border-black bg-gray-200 outline-none rounded-md px-4 py-3'/>
                 </div>
 
-                <button type="submit" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg px-5 py-2.5 text-center me-2 mb-2 text-xl mt-6">SUBMIT</button>
+                <button type="submit" className="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg px-5 py-2.5 text-center me-2 mb-2 text-xl mt-6">SUBMIT</button>
 
                 <p>not registered yet? <Link to='/signup' className=' text-blue-500 hover:underline'>SIGN UP</Link></p>
             </form>

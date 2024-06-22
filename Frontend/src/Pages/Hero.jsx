@@ -27,8 +27,8 @@ const Hero = () => {
 
   return (
     <main className='min-h-screen bg-gradient-to-br from-red-600 via-orange-500 to-pink-500 overflow-x-hidden'>
-        <div id="hero" class="min-h-screen ">
-           <div id="hero-container" class="max-w-4xl mx-auto px-6 pt-6 pb-16 flex flex-col sm:items-center sm:text-center sm:pt-12 sm:max-w-2xl ">
+        <div id="hero" className="min-h-screen ">
+           <div id="hero-container" className="max-w-4xl mx-auto px-6 pt-6 pb-16 flex flex-col sm:items-center sm:text-center sm:pt-12 sm:max-w-2xl ">
               <div id="hero-features" className='hidden sm:flex gap-6 my-6'>
                 <div className="flex justify-center items-center gap-1 text-gray-300 text-base font-bold">
                   <CiDeliveryTruck className='text-xl text-gray-200'/>
@@ -117,19 +117,19 @@ const Hero = () => {
            <div id="customer-review" className='container'>
             <h2 className='text-4xl md:text-5xl sm:font-semibold mb-7 md:mb-10 max-w-8xl leading-normal text-white'>🔊 Hear What Our Customers Are Saying!</h2>
             <div className="rounded-xl border flex flex-col items-center bg-white px-4 py-6">
-              <h3 class="text-2xl leading-relaxed">Seamless Selection: A Smooth Shopping Journey with TRADEZY</h3>
-              <div id="tag-container" class="flex gap-3 flex-wrap my-6">
-                <div class="flex gap-2 items-center justify-center bg-yellow-50 w-fit border border-yellow-300 px-3 py-1 rounded-md text-yellow-800">
+              <h3 className="text-2xl leading-relaxed">Seamless Selection: A Smooth Shopping Journey with TRADEZY</h3>
+              <div id="tag-container" className="flex gap-3 flex-wrap my-6">
+                <div className="flex gap-2 items-center justify-center bg-yellow-50 w-fit border border-yellow-300 px-3 py-1 rounded-md text-yellow-800">
                   <FaCheck />
-                  <span class="font-display font-medium">Fast and On time Delievery</span>
+                  <span className="font-display font-medium">Fast and On time Delievery</span>
                 </div>
-                <div class="flex gap-2 items-center justify-center bg-yellow-50 w-fit border border-yellow-300 px-3 py-1 rounded-md text-yellow-800">
+                <div className="flex gap-2 items-center justify-center bg-yellow-50 w-fit border border-yellow-300 px-3 py-1 rounded-md text-yellow-800">
                   <FaCheck />
-                  <span class="font-display font-medium">Caring and Friendly Customer Support</span>
+                  <span className="font-display font-medium">Caring and Friendly Customer Support</span>
                 </div>
-                <div class="flex gap-2 items-center justify-center bg-yellow-50 w-fit border border-yellow-300 px-3 py-1 rounded-md text-yellow-800">
+                <div className="flex gap-2 items-center justify-center bg-yellow-50 w-fit border border-yellow-300 px-3 py-1 rounded-md text-yellow-800">
                   <FaCheck />
-                  <span class="font-display font-medium">Amazing Product</span>
+                  <span className="font-display font-medium">Amazing Product</span>
                 </div>
               </div>
               <p className=' text-lg font-light text-gray-500 mx-1 md:mx-2 px-1 md:px-11'>My recent shopping experience at TRADEZY was exceptional. Navigating the website was effortless, thanks to its intuitive layout and clear organization. Finding the products I needed was quick and hassle-free, thanks to the user-friendly interface.
@@ -138,13 +138,13 @@ const Hero = () => {
               The checkout process was straightforward, with easy-to-follow steps and multiple secure payment options available. I appreciated the seamless transaction process, which made completing my purchase a breeze.
               Overall, I was highly satisfied with my shopping experience at TRADEZY. The website's ease of use and comprehensive product selection exceeded my expectations, and I look forward to shopping here again in the future.</p>
 
-              <div id="user-card" class="flex gap-4 m-10">
-                <div class="w-12 h-12">
-                    <img src={user1}  class="rounded-full w-full h-full object-cover"  alt="" />
+              <div id="user-card" className="flex gap-4 m-10">
+                <div className="w-12 h-12">
+                    <img src={user1}  className="rounded-full w-full h-full object-cover"  alt="" />
                 </div>
-                <div class="flex flex-col">
+                <div className="flex flex-col">
                     <h3>Aditya Mishra</h3>
-                    <p class="text-gray-500">A happy <a href="#" class="anchor-hover">Customer 😃</a> </p>
+                    <p className="text-gray-500">A happy <a href="#" className="anchor-hover">Customer 😃</a> </p>
                 </div>
               </div>
 
@@ -155,9 +155,9 @@ const Hero = () => {
                 <div className="rounded-2xl bg-white w-full h-full p-6 flex flex-col gap-4 items-center justify-center group-hover:bg-gradient-to-br group-hover:from-pink-100 group-hover:via-orange-100 group-hover:to-blue-100">
                   <p className=' text-lg font-normal text-gray-500 mx-1 md:mx-2 px-1 md:px-9'>My recent shopping escapade at Tradezy was nothing short of exceptional. With its seamless navigation and intuitive layout, browsing through the extensive array of electronics, fashion pieces, and home essentials was a breeze. The hassle-free checkout process, coupled with multiple secure payment options, added to the overall convenience. Suffice it to say, I left thoroughly satisfied and eagerly await my next rendezvous with Tradezy.</p>
 
-              <div id="user-card" class="flex gap-4 m-10 items-center">
-                <div class="w-16 h-16">
-                    <img src={user2}  class="rounded-full w-full h-full object-cover"  alt="" />
+              <div id="user-card" className="flex gap-4 m-10 items-center">
+                <div className="w-16 h-16">
+                    <img src={user2}  className="rounded-full w-full h-full object-cover"  alt="" />
                 </div>
                 <h3 className=' text-lg'>Nidhi Tanwar</h3>
               </div>
@@ -168,9 +168,9 @@ const Hero = () => {
               <div className=" group rounded-2xl p-[3px] bg-slate-200 hover:bg-gradient-to-br hover:from-pink-500 hover:via-orange-400 hover:to-blue-500">
                 <div className="rounded-2xl bg-white w-full h-full p-6 flex flex-col gap-4 items-center justify-center group-hover:bg-gradient-to-br group-hover:from-pink-100 group-hover:via-orange-100 group-hover:to-blue-100">
                   <p className=' text-lg font-normal text-gray-500 mx-1 md:mx-2 px-1 md:px-9'>My recent shopping expedition at TRADEZY was an absolute triumph. The website's seamless interface and intuitive design made browsing through their extensive collection a breeze. From trendy fashion pieces to cutting-edge electronics and chic home décor, they truly had it all. The checkout process was swift and hassle-free, offering a range of secure payment options to suit my preferences. Overall, my experience exceeded expectations, and I eagerly anticipate my next shopping spree at TRADEZY.</p>
-              <div id="user-card" class="flex gap-4 m-10 items-center">
-                <div class="w-16 h-16">
-                    <img src={user3}  class="rounded-full w-full h-full object-cover"  alt="" />
+              <div id="user-card" className="flex gap-4 m-10 items-center">
+                <div className="w-16 h-16">
+                    <img src={user3}  className="rounded-full w-full h-full object-cover"  alt="" />
                 </div>
                 <h3 className=' text-lg'>Samay Raina</h3>
               </div>
@@ -180,9 +180,9 @@ const Hero = () => {
               <div className=" group rounded-2xl p-[3px] bg-slate-200 hover:bg-gradient-to-br hover:from-pink-500 hover:via-orange-400 hover:to-blue-500">
                 <div className="rounded-2xl bg-white w-full h-full p-6 flex flex-col gap-4 items-center justify-center group-hover:bg-gradient-to-br group-hover:from-pink-100 group-hover:via-orange-100 group-hover:to-blue-100">
                   <p className=' text-lg font-normal text-gray-500 mx-1 md:mx-2 px-1 md:px-9'>My recent shopping experience at TRADEZY was superb. Navigating their user-friendly website was effortless, and their diverse selection of products, from fashion to electronics, impressed me. The checkout process was quick and secure, leaving me highly satisfied. I'll definitely be returning to TRADEZY for my future shopping needs.</p>
-                <div id="user-card" class="flex gap-4 m-10 items-center">
-                <div class="w-16 h-16">
-                    <img src={user4}  class="rounded-full w-full h-full object-cover"  alt="" />
+                <div id="user-card" className="flex gap-4 m-10 items-center">
+                <div className="w-16 h-16">
+                    <img src={user4}  className="rounded-full w-full h-full object-cover"  alt="" />
                 </div>
                 <h3 className=' text-lg'>Aniket Sharma</h3>
               </div>
