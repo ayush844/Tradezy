@@ -15,10 +15,13 @@ import Error from './Pages/Error.jsx';
 import Checkout from './Pages/Checkout.jsx';
 import AdminDashboard from './Pages/AdminDashboard.jsx';
 import AdminAddProduct from './Pages/AdminAddProduct.jsx';
+import MyState from './Context/data/MyState.jsx';
 
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+
+    <MyState>
     <BrowserRouter >
       <Routes >
 
@@ -39,6 +42,6 @@ createRoot(document.getElementById('root')).render(
 
       </Routes>
     </BrowserRouter>
-    
+    </MyState>
   </React.StrictMode>
 );

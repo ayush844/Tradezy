@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 
 import { RiCustomerService2Line } from "react-icons/ri";
 import { CiDeliveryTruck } from "react-icons/ci";
@@ -18,12 +18,14 @@ import user2 from '../assets/user2.jpg';
 import user3 from '../assets/user3.jpg';
 import user4 from '../assets/user4.jpg';
 import { Link } from 'react-router-dom';
+import MyContext from '../Context/data/MyContext';
 
 
 const Hero = () => {
 
   const [isFAQopen, setIsFAQopen] = useState(0);
 
+  
 
   return (
     <main className='min-h-screen bg-gradient-to-br from-red-600 via-orange-500 to-pink-500 overflow-x-hidden'>
