@@ -16,6 +16,7 @@ import Checkout from './Pages/Checkout.jsx';
 import AdminDashboard from './Pages/AdminDashboard.jsx';
 import AdminAddProduct from './Pages/AdminAddProduct.jsx';
 import MyState from './Context/data/MyState.jsx';
+import AdminUpdateProduct from './Pages/UpdateProduct.jsx';
 
 
 createRoot(document.getElementById('root')).render(
@@ -29,12 +30,13 @@ createRoot(document.getElementById('root')).render(
           <Route index element={<Hero />} />
           <Route path='categories' element={<Categories />} />
           <Route path='products' element={<Product />} />
-          <Route path='productOverview' element={<ProductOverview />} />
+          <Route path='productOverview/:id' element={<ProductOverview />} />
           <Route path='cart' element={<Cart />} />
           <Route path='me' element={<Me />} />
           <Route path='checkout' element={<Checkout />} />
           <Route path='admin/dashboard' element={<AdminDashboard />} />
           <Route path='admin/addProduct' element={<AdminAddProduct />} />
+          <Route path='admin/updateProduct' element={<AdminUpdateProduct />} />
           <Route path="*" element={<Error />} />
         </Route>
         <Route path="/login" element={<LogIn />} />
