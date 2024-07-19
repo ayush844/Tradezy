@@ -4,8 +4,6 @@ import Navbar from './Components/Navbar/Navbar'
 import { Outlet, useLocation } from 'react-router-dom'
 import Footer from './Components/Footer/Footer'
 
-import {Toaster} from 'react-hot-toast';
-
 const Layout = () => {
 
   const { pathname } = useLocation();
@@ -20,12 +18,8 @@ const Layout = () => {
         <Navbar />
         <Outlet />
         <Footer />
-        <Toaster toastOptions={{
-          style:{
-            backgroundColor: 'black',
-            color: 'white'
-          }
-        }}/>
+
+
     </>
   )
 }

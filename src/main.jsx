@@ -21,6 +21,10 @@ import { Provider } from 'react-redux';
 import { store } from './redux/Store.jsx';
 
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
@@ -45,6 +49,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/signup" element={<Signup />} />
 
       </Routes>
+      <ToastContainer />
     </BrowserRouter>
     </MyState>
     </Provider>
