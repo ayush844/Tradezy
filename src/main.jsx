@@ -17,11 +17,13 @@ import AdminDashboard from './Pages/AdminDashboard.jsx';
 import AdminAddProduct from './Pages/AdminAddProduct.jsx';
 import MyState from './Context/data/MyState.jsx';
 import AdminUpdateProduct from './Pages/UpdateProduct.jsx';
+import { Provider } from 'react-redux';
+import { store } from './redux/Store.jsx';
 
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-
+    <Provider store={store}>
     <MyState>
     <BrowserRouter >
       <Routes >
@@ -45,5 +47,6 @@ createRoot(document.getElementById('root')).render(
       </Routes>
     </BrowserRouter>
     </MyState>
+    </Provider>
   </React.StrictMode>
 );

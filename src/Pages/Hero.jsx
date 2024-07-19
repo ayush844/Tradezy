@@ -19,18 +19,38 @@ import user3 from '../assets/user3.jpg';
 import user4 from '../assets/user4.jpg';
 import { Link } from 'react-router-dom';
 import MyContext from '../Context/data/MyContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart, deleteFromCart } from '../redux/CartSlice';
 
 
 const Hero = () => {
 
   const [isFAQopen, setIsFAQopen] = useState(0);
 
-  
+  const dispatch = useDispatch();
+
+  const cartItem = useSelector((state) => state.cart);
+
+  console.log(cartItem);
+
+  const addCart = ()=>{
+    dispatch(addToCart("shirt"));
+  }
+
+  const deleteCart = ()=>{
+    dispatch(deleteFromCart("shirt"));
+  }
 
   return (
     <main className='min-h-screen bg-gradient-to-br from-red-600 via-orange-500 to-pink-500 overflow-x-hidden'>
         <div id="hero" className="min-h-screen ">
            <div id="hero-container" className="max-w-4xl mx-auto px-6 pt-6 pb-16 flex flex-col sm:items-center sm:text-center sm:pt-12 sm:max-w-2xl ">
+
+            {/* <div className="flex gap-5 justify-center">
+              <button className=' bg-gray-300 p-5' onClick={addCart}>add</button>
+              <button className=' bg-gray-300 p-5' onClick={deleteCart}>del</button>
+            </div> */}
+
               <div id="hero-features" className='hidden sm:flex gap-6 my-6'>
                 <div className="flex justify-center items-center gap-1 text-gray-300 text-base font-bold">
                   <CiDeliveryTruck className='text-xl text-gray-200'/>
