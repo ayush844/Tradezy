@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import logo from '../assets/logo.png';
 import MyContext from '../Context/data/MyContext';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
@@ -16,6 +16,8 @@ const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+
+    const navigate = useNavigate();
 
     const context = useContext(MyContext);
 
@@ -62,6 +64,8 @@ const Signup = () => {
             setEmail("");
             setPassword("");
             setConfirmPassword("");
+
+            navigate('/login');
             
 
             setLoading(false);

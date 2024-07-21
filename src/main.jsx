@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Layout from './Layout.jsx';
 import Hero from './Pages/Hero.jsx';
 import LogIn from './Pages/LogIn.jsx';
@@ -25,6 +25,33 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
+// USER
+
+export const ProtectedRoute = ({children})=>{
+  const user = localStorage.getItem('user');
+  
+  if(user){
+    return children;
+  }else{
+    return <Navigate to='/login' />
+  }
+}
+
+
+// ADMIN
+
+export const ProtectedRouteForAdmin = ({children})=>{
+  const admin = JSON.parse(localStorage.getItem('user'));
+
+  if(admin.user.email === 'admin@gmail.com'){
+    return children;
+  }else{
+    return <Navigate to='/login' />
+  }
+
+} 
+
+
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
@@ -37,12 +64,53 @@ createRoot(document.getElementById('root')).render(
           <Route path='categories' element={<Categories />} />
           <Route path='products' element={<Product />} />
           <Route path='productOverview/:id' element={<ProductOverview />} />
-          <Route path='cart' element={<Cart />} />
-          <Route path='me' element={<Me />} />
-          <Route path='checkout' element={<Checkout />} />
-          <Route path='admin/dashboard' element={<AdminDashboard />} />
-          <Route path='admin/addProduct' element={<AdminAddProduct />} />
-          <Route path='admin/updateProduct' element={<AdminUpdateProduct />} />
+
+          {/* user specific routes  */}
+
+          <Route path='cart' element={
+            <ProtectedRoute>
+              <Cart />
+            </ProtectedRoute>
+          } />
+
+          <Route path='me' element={
+            <ProtectedRoute>
+              <Me />
+            </ProtectedRoute>
+          } />
+
+          <Route path='checkout' element={
+            <ProtectedRoute>
+              <Checkout />
+            </ProtectedRoute>
+          } />
+
+
+
+          {/* admin routes  */}
+
+
+          <Route path='admin/dashboard' element={
+            <ProtectedRouteForAdmin>
+              <AdminDashboard />
+            </ProtectedRouteForAdmin>
+          } />
+
+          <Route path='admin/addProduct' element={
+            <ProtectedRouteForAdmin>
+              <AdminAddProduct />
+            </ProtectedRouteForAdmin>
+          } />
+
+          <Route path='admin/updateProduct' element={
+            <ProtectedRouteForAdmin>
+              <AdminUpdateProduct />
+            </ProtectedRouteForAdmin>
+          } />
+
+
+
+
           <Route path="*" element={<Error />} />
         </Route>
         <Route path="/login" element={<LogIn />} />
@@ -55,3 +123,5 @@ createRoot(document.getElementById('root')).render(
     </Provider>
   </React.StrictMode>
 );
+
+
