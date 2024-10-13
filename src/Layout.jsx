@@ -8,6 +8,8 @@ const Layout = () => {
 
   const { pathname } = useLocation();
 
+
+  // scroll to top whenever navigation take place
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);

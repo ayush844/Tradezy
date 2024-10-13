@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { FaUserAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
@@ -8,10 +8,15 @@ import UpdateProfile from '../Components/Modals/UpdateProfile';
 import PrevOrder from '../Components/Cards/PrevOrder';
 import { CiLogout } from "react-icons/ci";
 import { useNavigate } from 'react-router-dom';
+import { collection, doc, getDoc, getDocs, query, where } from 'firebase/firestore';
+import { fireDB } from '../firebase/FirebaseConfig';
+import defaultPic from "../assets/defaultProfile.png"
 
 const Me = () => {
 
   const [showModal, setShowModal] = useState(false);
+
+  const [userData, setUserData] = useState(null);
 
   const navigate = useNavigate();
 
@@ -19,6 +24,80 @@ const Me = () => {
     localStorage.clear('user');
     navigate("/login")
   }
+
+  // const user = JSON.parse(localStorage.getItem('user'));
+
+  // let uid = user.user.uid;
+
+  // if (user && user.user && user.user.uid) {
+  //   const userEmail = user.user.email;
+
+  //   const fetchUsername = async (uid) => {
+  //       try {
+  //           // Reference to the user document in Firestore
+  //           const userDocRef = doc(fireDB, "users", uid); // Assuming your collection name is "users"
+            
+  //           // Fetch the document
+  //           const userDocSnap = await getDoc(userDocRef);
+
+  //           console.log(userDocSnap)
+            
+  //           if (userDocSnap.exists()) {
+  //               const userData = userDocSnap.data();
+  //               console.log("Username:", userData.username);
+  //               return userData.username;
+  //           } else {
+  //               console.log("No user document found with UID:", uid);
+  //               return null;
+  //           }
+  //       } catch (error) {
+  //           console.error("Error fetching user document:", error);
+  //       }
+  //     };
+
+  //     fetchUsername(uid);
+  // } else {
+  //     console.log("No user found in local storage.");
+  // }
+
+
+  // let username;
+
+      // Fetch user data from Firestore based on email
+      useEffect(() => {
+        const fetchUserData = async () => {
+            const storedUser = JSON.parse(localStorage.getItem('user'));
+
+            if (storedUser && storedUser.user && storedUser.user.email) {
+                const userEmail = storedUser.user.email;
+
+                try {
+                    // Query Firestore to get user document with the matching email
+                    const usersRef = collection(fireDB, "users");
+                    const q = query(usersRef, where("email", "==", userEmail));
+                    const querySnapshot = await getDocs(q);
+
+                    if (!querySnapshot.empty) {
+                        querySnapshot.forEach((doc) => {
+                            setUserData(doc.data());  // Set user data
+                        });
+                    } else {
+                        console.log("No user found with the given email.");
+                    }
+                } catch (error) {
+                    console.error("Error fetching user data:", error);
+                }
+            } else {
+                console.log("No user found in local storage.");
+            }
+        };
+
+        fetchUserData();
+    }, []);  // Runs once on component mount
+
+
+    console.log(userData)
+
 
 
   return (
@@ -29,7 +108,7 @@ const Me = () => {
 
         <div className=' flex-[0.4] flex items-center justify-center'>
           <div className=" w-40 h-40 md:w-56 md:h-56 lg:w-80 lg:h-80">
-            <img src="https://images.unsplash.com/photo-1519002057778-fc7575edb6eb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  className="rounded-full w-full h-full object-cover"  alt="" />
+            <img src={defaultPic}  className="rounded-full w-full h-full object-cover"  alt="" />
           </div>
         </div>
 
@@ -37,20 +116,20 @@ const Me = () => {
         <div id="customerInfo" className=' flex-[0.6] flex flex-col gap-5'>
           <div className=" flex justify-start gap-1 w-full items-center">
               <FaUserAlt className=' text-red-600 text-xl lg:text-3xl flex-[0.1]'/>
-              <span className=' line-clamp-1 flex-[0.9] text-xl lg:text-3xl '>Elara Winslow</span>
+              <span className=' line-clamp-1 flex-[0.9] text-2xl lg:text-3xl '>{userData?.username}</span>
           </div>
           <div className=" flex justify-start gap-1 w-full items-center">
               <MdEmail className=' text-red-600 text-xl lg:text-3xl flex-[0.1]'/>
-              <span className=' line-clamp-1 flex-[0.9] text-xl lg:text-3xl '>elara.winslow123@example.com</span>
+              <span className=' line-clamp-1 flex-[0.9] text-2xl lg:text-3xl '>{userData?.email}</span>
           </div>
-          <div className=" flex justify-start gap-1 w-full items-center">
+          {/* <div className=" flex justify-start gap-1 w-full items-center">
               <IoCall className=' text-red-600 text-xl lg:text-3xl flex-[0.1]'/>
               <span className=' line-clamp-1 flex-[0.9] text-xl lg:text-3xl'>(555) 867-5309</span>
           </div>
           <div className=" flex justify-start gap-1 w-full items-center">
               <FaLocationDot className=' text-red-600 text-xl lg:text-3xl flex-[0.1]'/>
               <span className=' line-clamp-2 flex-[0.9] text-md lg:text-3xl '>123 Maplewood Drive, Apt 4B, Hawthorne, NY 10532, United States</span>
-          </div>
+          </div> */}
         </div>
 
       </div>

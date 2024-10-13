@@ -7,5 +7,5 @@ export const store = configureStore({
     reducer:{
         cart: CartSlice
     },
-    devTools: true
+    devTools: true //enable the Redux DevTools Extension
 })

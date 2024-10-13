@@ -29,9 +29,9 @@ const Signup = () => {
 
         setLoading(true);
 
-        console.log(username, email, password);
+        // console.log(username, email, password);
 
-        if(username==="" || email==="" || password==="" || confirmPassword===""){
+        if(username.trim()==="" || email.trim()==="" || password.trim()==="" || confirmPassword.trim()===""){
             return toast.error("all fields are required")
         }
 
@@ -41,6 +41,8 @@ const Signup = () => {
 
         try {
             const users = await createUserWithEmailAndPassword(auth, email, password);
+
+            console.log(users);
 
             var user = {
                 username: username,

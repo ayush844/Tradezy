@@ -10,8 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@cloudinary/react": "^1.13.0",
+    "@cloudinary/url-gen": "^1.21.0",
     "@reduxjs/toolkit": "^2.2.6",
     "@tailwindcss/line-clamp": "^0.4.4",
+    "cloudinary": "^2.5.1",
     "firebase": "^10.12.4",
     "multi-range-slider-react": "^2.0.7",
     "react": "^18.2.0",

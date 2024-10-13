@@ -1,236 +1,22 @@
-import React, { useMemo } from 'react'
+import React, { useContext, useMemo } from 'react'
 import { useTable, useSortBy, usePagination } from 'react-table'
+import MyContext from '../../Context/data/MyContext';
+
+import { MdEdit } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
+import { Link } from 'react-router-dom';
+
 
 const AdminProductTable = () => {
-  const data = useMemo(
-    () => [
-      {
-        id: 1, 
-        product: ' iPhone 13 Pro Max (Graphite, 256GB Storage) | A15 Bionic Chip | 6.7-inch Super Retina XDR Display | Triple 12MP Camera System',
-        price: 50000,
-        quantity: 20,
-        category: "Electronics"
-      },
-      {
-        id: 2, 
-        product: 'Air Max 270 React (Black/White, Size 10) | Lightweight Cushioning | Breathable Mesh Upper | Durable Rubber Outsole',
-        price: 1000,
-        quantity: 50,
-        category: "Fashion"
-      },
-      {
-        id: 3, 
-        product: 'Galaxy S21 Ultra (Phantom Black, 12GB RAM, 256GB Storage) | Exynos 2100 Processor | 6.8-inch Dynamic AMOLED 2X | 108MP Quad Camera',
-        price: 90000,
-        quantity: 7,
-        category: "Electronics"
-      },
-      {
-        id: 4, 
-        product: 'Classic Clog (Bright Yellow, Size 8) | Lightweight and Comfortable | Ventilation Ports | Pivoting Heel Straps',
-        price: 800,
-        quantity: 60,
-        category: "Fashion"
-      },
-      {
-        id: 5, 
-        product: ' iPhone 13 Pro Max (Graphite, 256GB Storage) | A15 Bionic Chip | 6.7-inch Super Retina XDR Display | Triple 12MP Camera System',
-        price: 50000,
-        quantity: 20,
-        category: "Electronics"
-      },
-      {
-        id: 6, 
-        product: 'Air Max 270 React (Black/White, Size 10) | Lightweight Cushioning | Breathable Mesh Upper | Durable Rubber Outsole',
-        price: 1000,
-        quantity: 50,
-        category: "Fashion"
-      },
-      {
-        id: 7, 
-        product: 'Galaxy S21 Ultra (Phantom Black, 12GB RAM, 256GB Storage) | Exynos 2100 Processor | 6.8-inch Dynamic AMOLED 2X | 108MP Quad Camera',
-        price: 90000,
-        quantity: 7,
-        category: "Electronics"
-      },
-      {
-        id: 8, 
-        product: 'Classic Clog (Bright Yellow, Size 8) | Lightweight and Comfortable | Ventilation Ports | Pivoting Heel Straps',
-        price: 800,
-        quantity: 60,
-        category: "Fashion"
-      },
-      {
-        id: 9, 
-        product: ' iPhone 13 Pro Max (Graphite, 256GB Storage) | A15 Bionic Chip | 6.7-inch Super Retina XDR Display | Triple 12MP Camera System',
-        price: 50000,
-        quantity: 20,
-        category: "Electronics"
-      },
-      {
-        id: 10, 
-        product: 'Air Max 270 React (Black/White, Size 10) | Lightweight Cushioning | Breathable Mesh Upper | Durable Rubber Outsole',
-        price: 1000,
-        quantity: 50,
-        category: "Fashion"
-      },
-      {
-        id: 11, 
-        product: 'Galaxy S21 Ultra (Phantom Black, 12GB RAM, 256GB Storage) | Exynos 2100 Processor | 6.8-inch Dynamic AMOLED 2X | 108MP Quad Camera',
-        price: 90000,
-        quantity: 7,
-        category: "Electronics"
-      },
-      {
-        id: 12, 
-        product: 'Classic Clog (Bright Yellow, Size 8) | Lightweight and Comfortable | Ventilation Ports | Pivoting Heel Straps',
-        price: 800,
-        quantity: 60,
-        category: "Fashion"
-      },
-      {
-        id: 13, 
-        product: ' iPhone 13 Pro Max (Graphite, 256GB Storage) | A15 Bionic Chip | 6.7-inch Super Retina XDR Display | Triple 12MP Camera System',
-        price: 50000,
-        quantity: 20,
-        category: "Electronics"
-      },
-      {
-        id: 14, 
-        product: 'Air Max 270 React (Black/White, Size 10) | Lightweight Cushioning | Breathable Mesh Upper | Durable Rubber Outsole',
-        price: 1000,
-        quantity: 50,
-        category: "Fashion"
-      },
-      {
-        id: 15, 
-        product: 'Galaxy S21 Ultra (Phantom Black, 12GB RAM, 256GB Storage) | Exynos 2100 Processor | 6.8-inch Dynamic AMOLED 2X | 108MP Quad Camera',
-        price: 90000,
-        quantity: 7,
-        category: "Electronics"
-      },
-      {
-        id: 16, 
-        product: 'Classic Clog (Bright Yellow, Size 8) | Lightweight and Comfortable | Ventilation Ports | Pivoting Heel Straps',
-        price: 800,
-        quantity: 60,
-        category: "Fashion"
-      },
-      {
-        id: 17, 
-        product: ' iPhone 13 Pro Max (Graphite, 256GB Storage) | A15 Bionic Chip | 6.7-inch Super Retina XDR Display | Triple 12MP Camera System',
-        price: 50000,
-        quantity: 20,
-        category: "Electronics"
-      },
-      {
-        id: 18, 
-        product: 'Air Max 270 React (Black/White, Size 10) | Lightweight Cushioning | Breathable Mesh Upper | Durable Rubber Outsole',
-        price: 1000,
-        quantity: 50,
-        category: "Fashion"
-      },
-      {
-        id: 19, 
-        product: 'Galaxy S21 Ultra (Phantom Black, 12GB RAM, 256GB Storage) | Exynos 2100 Processor | 6.8-inch Dynamic AMOLED 2X | 108MP Quad Camera',
-        price: 90000,
-        quantity: 7,
-        category: "Electronics"
-      },
-      {
-        id: 20, 
-        product: 'Classic Clog (Bright Yellow, Size 8) | Lightweight and Comfortable | Ventilation Ports | Pivoting Heel Straps',
-        price: 800,
-        quantity: 60,
-        category: "Fashion"
-      },
-      {
-        id: 21, 
-        product: ' iPhone 13 Pro Max (Graphite, 256GB Storage) | A15 Bionic Chip | 6.7-inch Super Retina XDR Display | Triple 12MP Camera System',
-        price: 50000,
-        quantity: 20,
-        category: "Electronics"
-      },
-      {
-        id: 22, 
-        product: 'Air Max 270 React (Black/White, Size 10) | Lightweight Cushioning | Breathable Mesh Upper | Durable Rubber Outsole',
-        price: 1000,
-        quantity: 50,
-        category: "Fashion"
-      },
-      {
-        id: 23, 
-        product: 'Galaxy S21 Ultra (Phantom Black, 12GB RAM, 256GB Storage) | Exynos 2100 Processor | 6.8-inch Dynamic AMOLED 2X | 108MP Quad Camera',
-        price: 90000,
-        quantity: 7,
-        category: "Electronics"
-      },
-      {
-        id: 24, 
-        product: 'Classic Clog (Bright Yellow, Size 8) | Lightweight and Comfortable | Ventilation Ports | Pivoting Heel Straps',
-        price: 800,
-        quantity: 60,
-        category: "Fashion"
-      },
-      {
-        id: 25, 
-        product: ' iPhone 13 Pro Max (Graphite, 256GB Storage) | A15 Bionic Chip | 6.7-inch Super Retina XDR Display | Triple 12MP Camera System',
-        price: 50000,
-        quantity: 20,
-        category: "Electronics"
-      },
-      {
-        id: 26, 
-        product: 'Air Max 270 React (Black/White, Size 10) | Lightweight Cushioning | Breathable Mesh Upper | Durable Rubber Outsole',
-        price: 1000,
-        quantity: 50,
-        category: "Fashion"
-      },
-      {
-        id: 27, 
-        product: 'Galaxy S21 Ultra (Phantom Black, 12GB RAM, 256GB Storage) | Exynos 2100 Processor | 6.8-inch Dynamic AMOLED 2X | 108MP Quad Camera',
-        price: 90000,
-        quantity: 7,
-        category: "Electronics"
-      },
-      {
-        id: 28, 
-        product: 'Classic Clog (Bright Yellow, Size 8) | Lightweight and Comfortable | Ventilation Ports | Pivoting Heel Straps',
-        price: 800,
-        quantity: 60,
-        category: "Fashion"
-      },
-      {
-        id: 29, 
-        product: ' iPhone 13 Pro Max (Graphite, 256GB Storage) | A15 Bionic Chip | 6.7-inch Super Retina XDR Display | Triple 12MP Camera System',
-        price: 50000,
-        quantity: 20,
-        category: "Electronics"
-      },
-      {
-        id: 30, 
-        product: 'Air Max 270 React (Black/White, Size 10) | Lightweight Cushioning | Breathable Mesh Upper | Durable Rubber Outsole',
-        price: 1000,
-        quantity: 50,
-        category: "Fashion"
-      },
-      {
-        id: 31, 
-        product: 'Galaxy S21 Ultra (Phantom Black, 12GB RAM, 256GB Storage) | Exynos 2100 Processor | 6.8-inch Dynamic AMOLED 2X | 108MP Quad Camera',
-        price: 90000,
-        quantity: 7,
-        category: "Electronics"
-      },
-      {
-        id: 32, 
-        product: 'Classic Clog (Bright Yellow, Size 8) | Lightweight and Comfortable | Ventilation Ports | Pivoting Heel Straps',
-        price: 800,
-        quantity: 60,
-        category: "Fashion"
-      },
-    ],
-    []
-  )
+
+  const context = useContext(MyContext);
+  const {ourProduct, editHandle, deleteProduct} = context;
+
+  console.log(ourProduct);
+
+
+  const data = useMemo(() => ourProduct || [], [ourProduct]);
+
 
   const columns = useMemo(
     () => [
@@ -240,7 +26,7 @@ const AdminProductTable = () => {
       }, 
       {
         Header: "PRODUCT",
-        accessor: "product"
+        accessor: "title"
       }, 
       {
         Header: "PRICE($)",
@@ -248,12 +34,29 @@ const AdminProductTable = () => {
       }, 
       {
         Header: "QUANTITY",
-        accessor: "quantity"
+        accessor: "qty"
       },
       {
         Header: "CATEGORY",
         accessor: "category"
       },
+      {
+        Header: "ACTIONS",
+        Cell: ({ row }) => (
+          
+          <div className="flex gap-4 items-center justify-center">
+            <Link to="/admin/updateProduct">
+              <button onClick={() => editHandle(row)} className="text-blue-600 hover:text-blue-800">
+                <MdEdit size={20} />
+              </button>
+            </Link>
+
+            <button onClick={() => deleteProduct(row)} className="text-red-600 hover:text-red-800">
+              <MdDelete size={20} />
+            </button>
+          </div>
+        )
+      }
     ],
     []
   )

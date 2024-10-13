@@ -73,10 +73,22 @@ const Navbar = () => {
                     Products
                 </Link>
 
-                <Link to="/me" className="font-medium m-3 p-3 block hover:bg-red-500 rounded-lg text-2xl text-white"  onClick={()=>setIsOpen(prev => !prev)}>
+                {
+                user?.user?.email && (
+                    <Link to="/me" className="font-medium m-3 p-3 block hover:bg-red-500 rounded-lg text-2xl text-white"  onClick={()=>setIsOpen(prev => !prev)}>
                     Me
-                </Link>
+                    </Link>
+                )
+                }
 
+
+                {
+                user?.user?.email === "admin@gmail.com" &&
+                <>
+                    <Link to="/admin/dashboard" className="font-medium m-3 p-3 block hover:bg-red-500 rounded-lg text-2xl text-white"  onClick={()=>setIsOpen(prev => !prev)}>Dashboard</Link>
+
+                </>
+            }
 
                 <div className="h-[1px] bg-gray-300"></div>
 
