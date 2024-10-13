@@ -1,10 +1,17 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import ProductFilter from '../Components/ProductFilter'
 
 import { BiSolidCategory } from "react-icons/bi";
 import ProductCard from '../Components/Cards/ProductCard';
+import MyContext from '../Context/data/MyContext';
 
 const Product = () => {
+
+
+  const context = useContext(MyContext);
+  const {ourProduct} = context;
+
+
 
   const [showProductFilter, setShowProductFilter] = useState(false);
 
@@ -37,21 +44,12 @@ const Product = () => {
             </div>
 
             <div id="productContainer" className=' w-[100%] h-fit p-2 md:p-6 flex flex-wrap items-center justify-center'>
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
-              <ProductCard />
+              {ourProduct.map((item, index) => {
+                return(
+                  <ProductCard item={item} key={index} />
+                )
+              }
+              )}
             </div>
 
           </div>
