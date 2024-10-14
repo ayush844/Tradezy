@@ -29,7 +29,7 @@ const AdminProductTable = () => {
         accessor: "title"
       }, 
       {
-        Header: "PRICE($)",
+        Header: "PRICE(₹)",
         accessor: "price"
       }, 
       {

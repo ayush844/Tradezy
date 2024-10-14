@@ -37,7 +37,7 @@ const CartProduct = ({item, deleteCart}) => {
             </select>
 
             <div id="optionAndPrice" className='flex flex-col items-center justify-evenly h-full gap-3'>
-                <span className='text-2xl'>${item.price * quantity}</span>
+                <span className='text-2xl'>₹{item.price * quantity}</span>
                 <span className='text-blue-800 cursor-pointer' onClick={() => deleteCart(item)}>REMOVE</span>
             </div>
         </div>

@@ -45,7 +45,7 @@ const ProductOverview = () => {
                 <div id="descriptionSection" className=' flex flex-col w-full lg:w-[50%] gap-7 p-2 pt-5'>
                     <h1 className=' text-4xl font-bold'>Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport</h1>
 
-                    <h2 className=' text-[3rem] font-normal'>$40,000</h2>
+                    <h2 className=' text-[3rem] font-normal'>₹40,000</h2>
 
                     <div id="review" className=' flex gap-3'>
                         <div id="starBox" className=' flex gap-2'>

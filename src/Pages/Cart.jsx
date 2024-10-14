@@ -18,6 +18,11 @@ const Cart = () => {
     toast.success('Product deleted from cart');
   };
 
+  const dataToSend = {
+    price: totalPrice,
+    cartItems: cartItems,
+  };
+
   useEffect(() => {
     let temp = 0;
     cartItems.forEach((cartItem) => {
@@ -51,16 +56,16 @@ const Cart = () => {
             <div className="w-full">
               <div className="w-full h-fit border-gray-400 border-b flex items-center justify-between p-4">
                 <span className='text-lg md:text-xl'>Total Price:</span>
-                <span className='text-lg md:text-xl text-gray-700'>${totalPrice}</span>
+                <span className='text-lg md:text-xl text-gray-700'>₹{totalPrice}</span>
               </div>
 
               <div className="w-full h-fit border-gray-800 border-2 md:border-4 flex items-center justify-between p-4">
                 <span className='text-2xl font-medium'>Order Total:</span>
-                <span className='text-2xl font-medium text-gray-700'>${totalPrice}</span>
+                <span className='text-2xl font-medium text-gray-700'>₹{totalPrice}</span>
               </div>
             </div>
 
-            <Link to="/checkout" className='w-full'>
+            <Link to={{ pathname: '/checkout', state: { data: dataToSend } }} className='w-full'>
               <button type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg w-full px-5 py-2.5 md:text-2xl text-center me-2 mb-2 uppercase font-bold text-xl">Checkout</button>
             </Link>
           </div>

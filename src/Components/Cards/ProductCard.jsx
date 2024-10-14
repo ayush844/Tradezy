@@ -67,7 +67,7 @@ const ProductCard = ({item}) => {
             <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded ms-3">4.0</span>
         </div>
         <div className="flex items-center justify-between">
-            <span className="text-3xl font-bold text-gray-900 truncate">${item?.price}</span>
+            <span className="text-3xl font-bold text-gray-900 truncate">₹{item?.price}</span>
             <button
                 onClick={() => addCart(item)}
                 disabled={isInCart} // Disable if item is already in cart
