@@ -229,7 +229,7 @@ const AdminOrderTable = () => {
         accessor: "product"
       }, 
       {
-        Header: "PRICE($)",
+        Header: "PRICE(₹)",
         accessor: "price"
       }, 
       {

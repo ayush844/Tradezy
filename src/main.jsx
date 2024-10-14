@@ -23,6 +23,11 @@ import { store } from './redux/Store.jsx';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import TermsAndConditions from './Pages/TermsAndConditions.jsx';
+import PrivacyPolicy from './Pages/Privacy.jsx';
+import RefundsCancellations from './Pages/Refunds.jsx';
+import ShippingPolicy from './Pages/Shipping.jsx';
+import ContactUs from './Pages/Contact.jsx';
 
 
 // USER
@@ -64,6 +69,11 @@ createRoot(document.getElementById('root')).render(
           <Route path='categories' element={<Categories />} />
           <Route path='products' element={<Product />} />
           <Route path='productOverview/:id' element={<ProductOverview />} />
+          <Route path='teramsandconditions' element={<TermsAndConditions />} />
+          <Route path='privacy' element={<PrivacyPolicy />} />
+          <Route path='refundorcancellation' element={<RefundsCancellations />} />
+          <Route path='shipping' element={<ShippingPolicy />} />
+          <Route path='contact' element={<ContactUs />} />
 
           {/* user specific routes  */}
 
