@@ -208,17 +208,42 @@ const MyState = (props) => {
 
 
 
+  const [user, setUser] = useState([]);
+
+  const getUserData = async () => {
+    setLoading(true)
+    try {
+      const result = await getDocs(collection(fireDB, "users"))
+      const usersArray = [];
+      result.forEach((doc) => {
+        usersArray.push(doc.data());
+        setLoading(false)
+      });
+      setUser(usersArray);
+      console.log(usersArray)
+      setLoading(false);
+    } catch (error) {
+      console.log(error)
+      setLoading(false)
+    }
+  }
+
+
+
+
 
   useEffect(()=>{
     getProductData(); // Call getProductData to fetch products when the component is first rendered
 
     getOrderData();
+
+    getUserData();
   }, [])
 
 
 
   return (
-    <MyContext.Provider value={{loading, setLoading, product, setProduct, addProduct, ourProduct, editHandle, updateProduct, deleteProduct, order}}>
+    <MyContext.Provider value={{loading, setLoading, product, setProduct, addProduct, ourProduct, editHandle, updateProduct, deleteProduct, order, user}}>
       {props.children}
     </MyContext.Provider>
   )

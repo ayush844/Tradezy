@@ -21,7 +21,7 @@ const AdminDashboard = () => {
 
       <div id="cartProducts" className={`lg:flex flex-col p-0 w-[100vw] lg:w-[80vw] min-h-[60vh] m-0 lg:mt-0 bg-slate-100 mx-0 lg:mx-2 lg:rounded-lg lg:p-6 items-center overflow-x-hidden`}>
 
-      <div className="flex w-full items-center mt-8 flex-wrap gap-4 justify-evenly">
+      {/* <div className="flex w-full items-center mt-8 flex-wrap gap-4 justify-evenly">
 
         <div className=" w-72 h-48 md:h-60 border-2 border-black bg-white rounded-md shadow-lg shadow-black hover:shadow-red-600 flex flex-col items-center justify-evenly">
           <h3 className=' text-3xl text-red-500 font-extrabold'>Total Customers</h3>
@@ -47,7 +47,7 @@ const AdminDashboard = () => {
           </p>
         </div>
 
-      </div>     
+      </div>      */}
 
 
       <div className="w-full flex items-center justify-center mt-8 mb-8 md:mt-16 md:mb-16">
