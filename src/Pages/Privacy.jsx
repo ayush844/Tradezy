@@ -6,7 +6,7 @@ const PrivacyPolicy = () => {
       <div className="max-w-4xl mx-auto bg-white p-8 shadow-md rounded-lg">
         <h1 className="text-3xl font-bold mb-6 text-center">Privacy Policy</h1>
         <p className="mb-4">
-          At [Your Website Name], we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. By accessing our website or using our services, you agree to the collection and use of information in accordance with this policy.
+          At Tradezy, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. By accessing our website or using our services, you agree to the collection and use of information in accordance with this policy.
         </p>
 
         <h2 className="text-2xl font-semibold mb-3 mt-6">1. Information We Collect</h2>

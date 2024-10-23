@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import { MdOutlineNavigateNext } from "react-icons/md";
 import { useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { fireDB } from '../firebase/FirebaseConfig';
+import { addDoc, collection } from 'firebase/firestore';
 
 
 const Checkout = () => {
@@ -19,9 +21,135 @@ const Checkout = () => {
 
     const cartItems = receivedData?.cartItems;
 
-    const buyNow = async () => {
-        // validation 
-        if (name === "" || address == "" || pincode == "" || phoneNumber == "") {
+    const grandTotal = receivedData?.price;
+
+    const amountArr = receivedData?.amountArr;
+
+    console.log(cartItems);
+    console.log(grandTotal);
+    console.log(amountArr);
+
+    // const buyNow = async () => {
+    //     // validation 
+    //     if (name === "" || address == "" || pincode == "" || phoneNumber == "") {
+    //       return toast.error("All fields are required", {
+    //         position: "top-center",
+    //         autoClose: 1000,
+    //         hideProgressBar: false,
+    //         closeOnClick: true,
+    //         pauseOnHover: true,
+    //         draggable: true,
+    //         progress: undefined,
+    //         theme: "colored",
+    //       })
+    //     }
+
+    //     const addressInfo = {
+    //         name,
+    //         address,
+    //         pincode,
+    //         phoneNumber,
+    //         date: new Date().toLocaleString(
+    //           "en-US",
+    //           {
+    //             month: "short",
+    //             day: "2-digit",
+    //             year: "numeric",
+    //           }
+    //         )
+    //     }
+
+    //     console.log(addressInfo);
+
+
+    //     const orderInfo = {
+    //         cartItems,
+    //         addressInfo,
+    //         date: new Date().toLocaleString(
+    //           "en-US",
+    //           {
+    //             month: "short",
+    //             day: "2-digit",
+    //             year: "numeric",
+    //           }
+    //         ),
+    //         email: JSON.parse(localStorage.getItem("user")).user.email,
+    //         userid: JSON.parse(localStorage.getItem("user")).user.uid,
+    //         // paymentId
+    //     }
+
+
+    //     try {
+
+    //         const orderRef = collection(fireDB, "orders");
+    //         await addDoc(orderRef, orderInfo)
+    //         // console.log("Document written with ID: ", result.id);
+    //         toast.success(`order place of INR${grandTotal}`)
+    //     } catch (error) {
+    //         console.log("hello from error")
+    //         console.log(error)
+    //     }
+    
+
+
+        
+
+    //     // var options = {
+    //     // //   key: "",
+    //     // //   key_secret: "",
+    //     //   amount: parseInt(grandTotal * 100),
+    //     //   currency: "INR",
+    //     //   order_receipt: 'order_rcptid_' + name,
+    //     //   name: "E-Bharat",
+    //     //   description: "for testing purpose",
+    //     //   handler: function (response) {
+    //     //       console.log(response)
+    //     //       toast.success('Payment Successful')
+
+    //     //     //   const paymentId = response.razorpay_payment_id
+    //     //       // store in firebase 
+    //     //       const orderInfo = {
+    //     //         cartItems,
+    //     //         addressInfo,
+    //     //         date: new Date().toLocaleString(
+    //     //           "en-US",
+    //     //           {
+    //     //             month: "short",
+    //     //             day: "2-digit",
+    //     //             year: "numeric",
+    //     //           }
+    //     //         ),
+    //     //         email: JSON.parse(localStorage.getItem("user")).user.email,
+    //     //         userid: JSON.parse(localStorage.getItem("user")).user.uid,
+    //     //         // paymentId
+    //     //       }
+
+    //     //       try {
+    //     //         const result = addDoc(collection(fireDB, "orders"), orderInfo)
+    //     //       } catch (error) {
+    //     //         console.log(error)
+    //     //       }
+
+    //     //   },
+      
+    //     //   theme: {
+    //     //       color: "#3399cc"
+    //     //   }
+    //     // };
+      
+    //     // var pay = new window.Razorpay(options);
+    //     // pay.open();
+    //     // console.log(pay)
+
+    // }
+
+
+    const buyNow = async (e) => {
+
+        e.preventDefault();
+
+        // Validation
+        if (!name || !address || !pincode || !phoneNumber) {
           return toast.error("All fields are required", {
             position: "top-center",
             autoClose: 1000,
@@ -31,75 +159,54 @@ const Checkout = () => {
             draggable: true,
             progress: undefined,
             theme: "colored",
-          })
+          });
         }
-
+    
         const addressInfo = {
-            name,
-            address,
-            pincode,
-            phoneNumber,
-            date: new Date().toLocaleString(
-              "en-US",
-              {
-                month: "short",
-                day: "2-digit",
-                year: "numeric",
-              }
-            )
-        }
-
-        console.log(addressInfo);
-
-
-        var options = {
-          key: "",
-          key_secret: "",
-          amount: parseInt(grandTotal * 100),
-          currency: "INR",
-          order_receipt: 'order_rcptid_' + name,
-          name: "E-Bharat",
-          description: "for testing purpose",
-          handler: function (response) {
-              console.log(response)
-              toast.success('Payment Successful')
-
-              const paymentId = response.razorpay_payment_id
-              // store in firebase 
-              const orderInfo = {
-                cartItems,
-                addressInfo,
-                date: new Date().toLocaleString(
-                  "en-US",
-                  {
-                    month: "short",
-                    day: "2-digit",
-                    year: "numeric",
-                  }
-                ),
-                email: JSON.parse(localStorage.getItem("user")).user.email,
-                userid: JSON.parse(localStorage.getItem("user")).user.uid,
-                paymentId
-              }
-
-              try {
-                const result = addDoc(collection(fireDB, "orders"), orderInfo)
-              } catch (error) {
-                console.log(error)
-              }
-
-          },
-      
-          theme: {
-              color: "#3399cc"
-          }
+          name,
+          address,
+          pincode,
+          phoneNumber,
+          date: new Date().toLocaleString("en-US", {
+            month: "short",
+            day: "2-digit",
+            year: "numeric",
+          }),
         };
-      
-        var pay = new window.Razorpay(options);
-        pay.open();
-        console.log(pay)
+    
+        const orderInfo = {
+          cartItems,
+          addressInfo,
+          grandTotal,
+          amountArr,
+          date: new Date().toLocaleString("en-US", {
+            month: "short",
+            day: "2-digit",
+            year: "numeric",
+          }),
+          email: JSON.parse(localStorage.getItem("user")).user.email,
+          userid: JSON.parse(localStorage.getItem("user")).user.uid,
+        };
+    
+        try {
+          const result = await addDoc(collection(fireDB, "orders"), orderInfo);
+          console.log("Order placed with ID: ", result.id);
+          toast.success(`Order placed for INR ${grandTotal}`);
+          setName("");
+          setAddress("");
+          setPincode("");
+          setPhoneNumber("");
 
-    }
+        setTimeout(() => {
+            window.location.href = '/cart'    
+        }, 1400)
+
+
+        } catch (error) {
+          console.error("Error placing order: ", error);
+        }
+      };
+    
 
 
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import { FaUserAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
@@ -11,18 +11,40 @@ import { useNavigate } from 'react-router-dom';
 import { collection, doc, getDoc, getDocs, query, where } from 'firebase/firestore';
 import { fireDB } from '../firebase/FirebaseConfig';
 import defaultPic from "../assets/defaultProfile.png"
+import MyContext from '../Context/data/MyContext';
+import Loader from '../Components/Loader/Loader';
+import { clearCart } from '../redux/CartSlice';
+import { useDispatch } from 'react-redux';
 
 const Me = () => {
+
+  const dispatch = useDispatch()
 
   const [showModal, setShowModal] = useState(false);
 
   const [userData, setUserData] = useState(null);
 
+  const context = useContext(MyContext)
+  const {  loading, order } = context
+
   const navigate = useNavigate();
 
-  const logout = ()=>{
-    localStorage.clear('user');
-    navigate("/login")
+  // const logout = ()=>{
+  //   localStorage.clear('user');
+  //   localStorage.clear('cart');
+  //   navigate("/login")
+  // }
+
+  const logout = () => {
+    // Clear user and cart from local storage
+    localStorage.removeItem('user');
+    localStorage.removeItem('cart');
+
+    // Dispatch the clearCart action to reset the cart in Redux
+    dispatch(clearCart());
+
+    // Navigate to the login page
+    navigate("/login");
   }
 
   // const user = JSON.parse(localStorage.getItem('user'));
@@ -97,7 +119,7 @@ const Me = () => {
 
 
     console.log(userData)
-
+    console.log(order)
 
 
   return (
@@ -143,7 +165,30 @@ const Me = () => {
         {showModal && <UpdateProfile setShowModal={setShowModal} />}
       </div>
 
-      <div className=' w-full gap-4 md:gap-8 mt-10 md:mt-16 lg:mt-24 flex flex-col items-center '>
+
+      {loading && <Loader />}
+
+    <div className=' w-full gap-4 md:gap-8 mt-10 md:mt-16 lg:mt-24 flex flex-col items-center '>
+      <h2 className=' text-3xl md:text-4xl lg:text-5xl text-red-500 underline'>🛍️Previous Orders</h2>
+      <div className=" w-full m-3 p-4 flex flex-wrap justify-center">
+      {order.length > 0 ? (
+        <>
+        {order.filter(obj => obj.userid === userData?.uid).map((order) => {
+          return (
+            order.cartItems.map((item) => {
+              return (
+                <PrevOrder key={item.id} amt={item.quantity ? item.quantity : 1} title={item.title} price={item.price} />
+              )
+            })
+          );
+        })}
+        </>
+      ): (1)}
+      </div>
+
+    </div>
+
+      {/* <div className=' w-full gap-4 md:gap-8 mt-10 md:mt-16 lg:mt-24 flex flex-col items-center '>
         <h2 className=' text-3xl md:text-4xl lg:text-5xl text-red-500 underline'>🛍️Previous Orders</h2>
         <div className=" w-full m-3 p-4 flex flex-wrap justify-center">
 
@@ -155,7 +200,7 @@ const Me = () => {
           <PrevOrder />
 
         </div>
-      </div>
+      </div> */}
 
       <div className=" mt-10 md:mt-20 w-full items-center justify-center flex ">
         <button onClick={logout} type="button" className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 flex items-center justify-center gap-3">

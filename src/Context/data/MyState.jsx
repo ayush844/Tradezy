@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import MyContext from './MyContext'
-import { Timestamp, addDoc, collection, deleteDoc, doc, onSnapshot, orderBy, query, setDoc } from 'firebase/firestore';
+import { Timestamp, addDoc, collection, deleteDoc, doc, getDocs, onSnapshot, orderBy, query, setDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 
 import { fireDB } from '../../firebase/FirebaseConfig';
@@ -126,9 +126,7 @@ const MyState = (props) => {
   }
 
 
-  useEffect(()=>{
-    getProductData(); // Call getProductData to fetch products when the component is first rendered
-  }, [])
+
 
 
 
@@ -188,8 +186,39 @@ const MyState = (props) => {
 
 
 
+  const [order, setOrder] = useState([]);
+
+  const getOrderData = async () => {
+    setLoading(true)
+    try {
+      const result = await getDocs(collection(fireDB, "orders"))
+      const ordersArray = [];
+      result.forEach((doc) => {
+        ordersArray.push(doc.data());
+        setLoading(false)
+      });
+      setOrder(ordersArray);
+      console.log(ordersArray)
+      setLoading(false);
+    } catch (error) {
+      console.log(error)
+      setLoading(false)
+    }
+  }
+
+
+
+
+  useEffect(()=>{
+    getProductData(); // Call getProductData to fetch products when the component is first rendered
+
+    getOrderData();
+  }, [])
+
+
+
   return (
-    <MyContext.Provider value={{loading, setLoading, product, setProduct, addProduct, ourProduct, editHandle, updateProduct, deleteProduct}}>
+    <MyContext.Provider value={{loading, setLoading, product, setProduct, addProduct, ourProduct, editHandle, updateProduct, deleteProduct, order}}>
       {props.children}
     </MyContext.Provider>
   )

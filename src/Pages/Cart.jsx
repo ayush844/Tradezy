@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteFromCart } from '../redux/CartSlice';
 import { toast } from 'react-toastify';
 
+const amountArr = [];
+
 const Cart = () => {
   const context = useContext(MyContext);
   const { ourProduct } = context;
@@ -18,23 +20,49 @@ const Cart = () => {
     toast.success('Product deleted from cart');
   };
 
-  const dataToSend = {
-    price: totalPrice,
-    cartItems: cartItems,
-  };
 
   useEffect(() => {
     let temp = 0;
-    cartItems.forEach((cartItem) => {
+    cartItems.forEach((cartItem, index) => {
+      amountArr[index] = cartItem.quantity ? +cartItem.quantity : 1;
       temp += cartItem.price * (cartItem.quantity ? +cartItem.quantity : 1);  // Calculate based on quantity
+      console.log(amountArr[index]);
     });
     console.log("total price is ", temp)
     setTotalPrice(temp);
+    console.log(amountArr);
   }, [cartItems]);
 
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cartItems));
   }, [cartItems]);
+
+
+    // Function to handle disabled checkout with toast
+    const handleCheckoutClick = (e) => {
+      if (totalPrice === 0 || cartItems.length === 0) {
+        e.preventDefault(); // Prevent the default action (navigating to checkout)
+        toast.error('Add something to the cart first!');
+      }
+    };
+
+    // console.log(cartItems[0].quantity);
+
+    useEffect(() => {
+      cartItems.forEach((cartItem, index) => {
+        amountArr[index] = cartItem.quantity ? +cartItem.quantity : 1;
+        console.log(`amount @ ${index}: ${amountArr[index]}`);
+      });
+      console.log(amountArr);
+    }, []);
+
+
+    const dataToSend = {
+      price: totalPrice,
+      cartItems: cartItems,
+      amountArr: amountArr
+    };
+  
 
   return (
     <main className='min-h-screen overflow-x-hidden mb-6'>
@@ -65,9 +93,28 @@ const Cart = () => {
               </div>
             </div>
 
-            <Link to={{ pathname: '/checkout', state: { data: dataToSend } }} className='w-full'>
+            {/* <Link to="/checkout" state={{ data: dataToSend }} className='w-full' >
               <button type="button" className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg w-full px-5 py-2.5 md:text-2xl text-center me-2 mb-2 uppercase font-bold text-xl">Checkout</button>
+            </Link> */}
+
+                        {/* Disable the button if totalPrice is 0 or cartItems is empty */}
+            <Link
+              to={totalPrice > 0 && cartItems.length > 0 ? "/checkout" : "#"}
+              state={{ data: dataToSend }}
+              className='w-full'
+              onClick={handleCheckoutClick}
+            >
+              <button
+                type="button"
+                disabled={totalPrice === 0 || cartItems.length === 0} // Disable condition
+                className={`text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg w-full px-5 py-2.5 md:text-2xl text-center me-2 mb-2 uppercase font-bold text-xl ${
+                  (totalPrice === 0 || cartItems.length === 0) ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
+              >
+                Checkout
+              </button>
             </Link>
+
           </div>
         </div>
       </div>
