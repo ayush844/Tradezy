@@ -242,8 +242,15 @@ const MyState = (props) => {
 
 
 
+  // const [searchkey, setSearchkey] = useState('')
+  const [filterType, setFilterType] = useState('')
+  const [filterMinPrice, setFilterMinPrice] = useState(0)
+  const [filterMaxPrice, setFilterMaxPrice] = useState(500)
+
+
+
   return (
-    <MyContext.Provider value={{loading, setLoading, product, setProduct, addProduct, ourProduct, editHandle, updateProduct, deleteProduct, order, user}}>
+    <MyContext.Provider value={{loading, setLoading, product, setProduct, addProduct, ourProduct, editHandle, updateProduct, deleteProduct, order, user, filterType, setFilterType, filterMinPrice, setFilterMinPrice, filterMaxPrice, setFilterMaxPrice}}>
       {props.children}
     </MyContext.Provider>
   )
